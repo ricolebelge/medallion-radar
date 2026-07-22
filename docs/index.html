@@ -9,30 +9,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --void:#0B0E1A;
-    --surface:#141a2e;
-    --surface-raised:#1c2440;
-    --gold:#C9A961;
-    --mist:#8891a8;
-    --parchment:#ECE7DA;
-    --buy:#4FD1AE;
-    --caution:#E2725B;
-    --watch:#C9A961;
-    --hairline: rgba(201,169,97,0.18);
+    --bg:#F2ECDD;
+    --surface:#FFFDF7;
+    --surface-2:#FBF4E4;
+    --ink:#241C2E;
+    --mist:#726C82;
+    --gold:#A9793B;
+    --buy:#2F8F72;
+    --caution:#B14428;
+    --watch:#A9793B;
+    --hairline: rgba(36,28,46,0.14);
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
     background:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,169,97,0.10), transparent),
-      var(--void);
-    color:var(--parchment);
+      radial-gradient(ellipse 90% 40% at 50% -10%, rgba(169,121,59,0.10), transparent),
+      var(--bg);
+    color:var(--ink);
     font-family:'Inter',sans-serif;
     min-height:100vh;
   }
-  .wrap{max-width:1100px;margin:0 auto;padding:56px 24px 80px;}
+  .wrap{max-width:1140px;margin:0 auto;padding:56px 24px 80px;}
 
-  header{margin-bottom:48px;}
+  header{margin-bottom:40px;}
   .eyebrow{
     font-family:'JetBrains Mono',monospace;
     font-size:12px;
@@ -44,94 +44,103 @@
   h1{
     font-family:'Cinzel',serif;
     font-weight:700;
-    font-size:clamp(32px,5vw,52px);
+    font-size:clamp(32px,5vw,50px);
     margin:0 0 12px;
     letter-spacing:0.02em;
+    color:var(--ink);
   }
   .sub{
     color:var(--mist);
     font-size:16px;
-    max-width:560px;
+    max-width:580px;
     line-height:1.5;
-    margin:0 0 28px;
+    margin:0 0 24px;
+  }
+
+  .toolbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    border-top:1px solid var(--hairline);
+    border-bottom:1px solid var(--hairline);
+    padding:12px 0;
   }
   .ticker{
     font-family:'JetBrains Mono',monospace;
     font-size:13px;
     color:var(--mist);
-    border-top:1px solid var(--hairline);
-    border-bottom:1px solid var(--hairline);
-    padding:12px 0;
     display:flex;
-    gap:28px;
+    gap:24px;
     flex-wrap:wrap;
   }
-  .ticker b{color:var(--parchment);font-weight:500;}
+  .ticker b{color:var(--ink);font-weight:600;}
+  .currency-toggle{
+    display:flex;
+    border:1px solid var(--hairline);
+    border-radius:8px;
+    overflow:hidden;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+  }
+  .currency-toggle button{
+    background:var(--surface);
+    border:none;
+    color:var(--mist);
+    padding:7px 16px;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:inherit;
+    letter-spacing:0.04em;
+  }
+  .currency-toggle button + button{border-left:1px solid var(--hairline);}
+  .currency-toggle button.active{background:var(--gold);color:#FFF9EE;}
 
   .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
     gap:20px;
-    margin-top:40px;
+    margin-top:36px;
   }
   .card{
     background:var(--surface);
     border:1px solid var(--hairline);
     border-radius:16px;
-    padding:28px 22px 22px;
+    padding:26px 22px 20px;
     display:flex;
     flex-direction:column;
     align-items:center;
     text-align:center;
-    position:relative;
-    overflow:hidden;
-  }
-  .card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at 50% 0%, rgba(201,169,97,0.06), transparent 60%);
-    pointer-events:none;
+    box-shadow:0 1px 2px rgba(36,28,46,0.04);
   }
   .medallion{
-    width:76px;height:76px;border-radius:50%;
+    width:70px;height:70px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
-    font-family:'Cinzel',serif;font-weight:700;font-size:22px;
-    background:var(--surface-raised);
+    font-family:'Cinzel',serif;font-weight:700;font-size:20px;
+    background:var(--surface-2);
     color:var(--gold);
-    margin-bottom:18px;
-    position:relative;
-  }
-  .medallion::after{
-    content:"";
-    position:absolute;inset:-6px;
-    border-radius:50%;
+    margin-bottom:16px;
     border:2px solid var(--ring-color, var(--watch));
-    box-shadow:0 0 18px -2px var(--ring-color, var(--watch));
-    animation:pulse 3.2s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{opacity:0.55;}
-    50%{opacity:1;}
   }
   .name{
     font-family:'Cinzel',serif;
-    font-weight:500;
-    font-size:16px;
+    font-weight:600;
+    font-size:18px;
     margin-bottom:6px;
     letter-spacing:0.01em;
   }
-  .price-sol{
+  .price-main{
     font-family:'JetBrains Mono',monospace;
-    font-size:22px;
+    font-size:24px;
     font-weight:700;
-    color:var(--parchment);
+    color:var(--ink);
   }
-  .price-eur{
+  .price-sub{
     font-family:'JetBrains Mono',monospace;
-    font-size:13px;
+    font-size:12px;
     color:var(--mist);
-    margin-bottom:14px;
+    margin-bottom:12px;
   }
   .badge{
     font-family:'JetBrains Mono',monospace;
@@ -142,16 +151,35 @@
     border-radius:999px;
     border:1px solid var(--ring-color, var(--watch));
     color:var(--ring-color, var(--watch));
-    margin-bottom:14px;
+    margin-bottom:12px;
   }
   .reason{
     font-size:12.5px;
     color:var(--mist);
     line-height:1.5;
     min-height:34px;
-    margin-bottom:14px;
+    margin-bottom:12px;
   }
-  .spark{width:100%;height:36px;}
+  .spark{width:100%;height:34px;}
+
+  .extremes{
+    display:flex;
+    width:100%;
+    gap:10px;
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid var(--hairline);
+  }
+  .extreme{
+    flex:1;
+    text-align:left;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .extreme .lbl{font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--mist);}
+  .extreme.atl .val{color:var(--buy);font-weight:700;font-size:14px;}
+  .extreme.ath .val{color:var(--caution);font-weight:700;font-size:14px;}
+  .extreme .date{font-size:10px;color:var(--mist);}
+
   .meta{
     font-family:'JetBrains Mono',monospace;
     font-size:11px;
@@ -159,10 +187,78 @@
     display:flex;
     justify-content:space-between;
     width:100%;
-    margin-top:10px;
-    border-top:1px solid var(--hairline);
-    padding-top:10px;
+    margin-top:12px;
   }
+
+  .tx-list{
+    width:100%;
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid var(--hairline);
+    text-align:left;
+  }
+  .tx-list .lbl{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--mist);
+    margin-bottom:8px;
+  }
+  .tx-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    padding:4px 0;
+    border-top:1px dashed var(--hairline);
+  }
+  .tx-row:first-of-type{border-top:none;}
+  .tx-type{color:var(--ink);}
+  .tx-type.buyNow{color:var(--buy);font-weight:600;}
+  .tx-price{color:var(--mist);}
+  .tx-time{color:var(--mist);font-size:10.5px;}
+
+  .compare-section{
+    margin-top:48px;
+    padding-top:32px;
+    border-top:1px solid var(--hairline);
+  }
+  .compare-section h2{
+    font-family:'Cinzel',serif;
+    font-size:22px;
+    font-weight:600;
+    margin:0 0 6px;
+  }
+  .compare-sub{
+    color:var(--mist);
+    font-size:13px;
+    margin:0 0 18px;
+    max-width:520px;
+  }
+  .compare-legend{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:14px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+  }
+  .compare-legend .legend-item{display:flex;align-items:center;gap:6px;color:var(--mist);}
+  .compare-legend .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+  .compare-legend b{color:var(--ink);}
+  .compare-chart{width:100%;height:220px;background:var(--surface);border:1px solid var(--hairline);border-radius:12px;}
+  .pct-row{
+    display:flex;
+    gap:14px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    color:var(--mist);
+    margin-top:8px;
+  }
+  .pct-row .up{color:var(--buy);font-weight:600;}
+  .pct-row .down{color:var(--caution);font-weight:600;}
 
   footer{
     margin-top:56px;
@@ -181,27 +277,56 @@
     <header>
       <div class="eyebrow">Suivi non-officiel &middot; groupe privé</div>
       <h1>TML NFT Watch</h1>
-      <p class="sub">Floor price, volume et signaux d'achat/vente sur les medallions officiels Tomorrowland, calculés à partir des transactions réelles sur Magic Eden.</p>
-      <div class="ticker" id="ticker">Chargement…</div>
+      <p class="sub">Floor price, ATH/ATL et signaux d'achat/vente sur les medallions officiels Tomorrowland, calculés à partir des transactions réelles sur Magic Eden.</p>
+      <div class="toolbar">
+        <div class="ticker" id="ticker">Chargement…</div>
+        <div class="currency-toggle" id="currencyToggle">
+          <button data-currency="SOL" class="active">SOL</button>
+          <button data-currency="EUR">EUR</button>
+        </div>
+      </div>
     </header>
 
     <div class="grid" id="grid">
       <div class="empty">Chargement des données…</div>
     </div>
 
+    <section class="compare-section">
+      <h2>Comparaison des 3 séries</h2>
+      <p class="compare-sub">Variation en % depuis le début de l'historique affiché — permet de voir quelle série sur-performe les autres.</p>
+      <div id="compareChart"></div>
+    </section>
+
     <footer>
-      Ces signaux sont des indicateurs heuristiques (moyennes mobiles, volume, pression de l'offre) construits à partir de l'historique collecté — ce n'est pas un conseil financier. Le marché des NFT est peu liquide et peut bouger fortement sur peu de transactions.<br>
+      Ces signaux sont des indicateurs heuristiques (moyennes mobiles, volume, pression de l'offre) construits à partir de l'historique collecté — ce n'est pas un conseil financier. ATH/ATL calculés depuis l'historique complet des ventes on-chain de chaque collection. Le marché des NFT est peu liquide et peut bouger fortement sur peu de transactions.<br>
       Données : <a href="https://magiceden.io" target="_blank" rel="noopener">Magic Eden</a> · Taux : <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a>
     </footer>
   </div>
 
 <script>
 const RING = {
+  "ACHAT FORT": "var(--buy)",
   "SIGNAL ACHAT": "var(--buy)",
-  "PRUDENCE": "var(--caution)",
   "SURVEILLER": "var(--watch)",
+  "PRUDENCE": "var(--caution)",
+  "VENDRE": "var(--caution)",
   "COLLECTE EN COURS": "var(--mist)",
 };
+
+const COMPARE_COLORS = ["#A9793B", "#2F8F72", "#B14428"];
+
+function fmtPct(v){
+  if(v == null) return "—";
+  const sign = v > 0 ? "+" : "";
+  return `${sign}${v.toFixed(1)}%`;
+}
+function pctClass(v){
+  if(v == null) return "";
+  return v > 0 ? "up" : (v < 0 ? "down" : "");
+}
+
+let latestData = null;
+let currentCurrency = "SOL";
 
 function timeAgo(iso){
   if(!iso) return "—";
@@ -211,7 +336,21 @@ function timeAgo(iso){
   if(min < 60) return `il y a ${min} min`;
   const h = Math.round(min/60);
   if(h < 24) return `il y a ${h} h`;
-  return `il y a ${Math.round(h/24)} j`;
+  const d = Math.round(h/24);
+  if(d < 30) return `il y a ${d} j`;
+  const m = Math.round(d/30);
+  if(m < 24) return `il y a ${m} mois`;
+  return `il y a ${Math.round(m/12)} an(s)`;
+}
+
+function fmtPrice(sol){
+  if(sol == null) return "—";
+  if(currentCurrency === "EUR"){
+    const rate = latestData && latestData.sol_eur;
+    if(!rate) return "—";
+    return (sol * rate).toFixed(2) + " €";
+  }
+  return sol.toFixed(3) + " SOL";
 }
 
 function sparkline(history){
@@ -219,7 +358,7 @@ function sparkline(history){
   if(pts.length < 2) return "";
   const min = Math.min(...pts), max = Math.max(...pts);
   const range = (max - min) || 1;
-  const w = 200, h = 36, pad = 3;
+  const w = 200, h = 34, pad = 3;
   const step = (w - pad*2) / (pts.length - 1);
   const coords = pts.map((v,i) => {
     const x = pad + i*step;
@@ -234,7 +373,131 @@ function sparkline(history){
 }
 
 function initials(label){
-  return label.split(" ").filter(w => w.length > 2 || /^[A-Z]/.test(w)).slice(0,1)[0]?.slice(0,3).toUpperCase() || label.slice(0,3).toUpperCase();
+  return label.slice(0,3).toUpperCase();
+}
+
+function txRow(tx){
+  const cls = tx.type === "buyNow" ? "buyNow" : "";
+  const price = tx.price_sol != null ? fmtPrice(tx.price_sol) : "—";
+  return `
+    <div class="tx-row">
+      <span class="tx-type ${cls}">${tx.type_label}</span>
+      <span class="tx-price">${price}</span>
+      <span class="tx-time">${timeAgo(tx.ts)}</span>
+    </div>
+  `;
+}
+
+function comparisonChart(entries){
+  const series = entries
+    .map((e, i) => ({
+      label: e.label,
+      color: COMPARE_COLORS[i % COMPARE_COLORS.length],
+      points: (e.history || []).filter(h => h.floor_sol != null),
+    }))
+    .filter(s => s.points.length >= 2);
+
+  if(series.length === 0){
+    return `<div class="empty">Pas encore assez d'historique pour comparer les séries.</div>`;
+  }
+
+  const windowSize = Math.min(...series.map(s => s.points.length), 500);
+  const w = 900, h = 220, pad = 12;
+
+  const lines = series.map(s => {
+    const slice = s.points.slice(-windowSize);
+    const base = slice[0].floor_sol;
+    const pct = slice.map(p => base ? ((p.floor_sol - base) / base) * 100 : 0);
+    return { label: s.label, color: s.color, pct };
+  });
+
+  const allPct = lines.flatMap(l => l.pct).concat([0]);
+  const minPct = Math.min(...allPct);
+  const maxPct = Math.max(...allPct);
+  const range = (maxPct - minPct) || 1;
+  const stepX = windowSize > 1 ? (w - pad * 2) / (windowSize - 1) : 0;
+  const yFor = v => h - pad - ((v - minPct) / range) * (h - pad * 2);
+
+  const polylines = lines.map(l => {
+    const coords = l.pct.map((v, i) => `${(pad + i * stepX).toFixed(1)},${yFor(v).toFixed(1)}`).join(" ");
+    return `<polyline points="${coords}" fill="none" stroke="${l.color}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+  }).join("");
+
+  const legend = lines.map(l => {
+    const last = l.pct[l.pct.length - 1];
+    const sign = last >= 0 ? "+" : "";
+    return `<span class="legend-item"><span class="dot" style="background:${l.color}"></span>${l.label} <b>${sign}${last.toFixed(1)}%</b></span>`;
+  }).join("");
+
+  return `
+    <div class="compare-legend">${legend}</div>
+    <svg class="compare-chart" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+      <line x1="${pad}" y1="${yFor(0).toFixed(1)}" x2="${w - pad}" y2="${yFor(0).toFixed(1)}" stroke="var(--hairline)" stroke-width="1"/>
+      ${polylines}
+    </svg>
+  `;
+}
+
+function renderAll(){
+  if(!latestData) return;
+  const grid = document.getElementById("grid");
+  const ticker = document.getElementById("ticker");
+  const data = latestData;
+
+  ticker.innerHTML = `
+    <span>SOL/EUR <b>${data.sol_eur ? data.sol_eur.toFixed(2) + " €" : "—"}</b></span>
+    <span>Dernière mise à jour <b>${timeAgo(data.last_update)}</b></span>
+    <span>${Object.keys(data.collections || {}).length} collection(s) suivies</span>
+  `;
+
+  const entries = Object.values(data.collections || {});
+  if(entries.length === 0){
+    grid.innerHTML = `<div class="empty">Aucune donnée pour le moment — le premier passage du collecteur n'a pas encore tourné.</div>`;
+    return;
+  }
+
+  grid.innerHTML = entries.map(entry => {
+    const c = entry.current || {};
+    const ring = RING[c.signal] || "var(--watch)";
+    const tx = (entry.recent_tx || []).map(txRow).join("") || `<div class="tx-row"><span class="tx-type">Aucune tx récente</span></div>`;
+    return `
+      <div class="card" style="--ring-color:${ring}">
+        <div class="medallion">${initials(entry.label)}</div>
+        <div class="name">${entry.label}</div>
+        <div class="price-main">${fmtPrice(c.floor_sol)}</div>
+        <div class="price-sub">Floor actuel</div>
+        <div class="badge">${c.signal || "—"}</div>
+        <div class="reason">${c.signal_reason || ""}</div>
+        <div class="pct-row">
+          <span>7j: <span class="${pctClass(c.pct_7d)}">${fmtPct(c.pct_7d)}</span></span>
+          <span>30j: <span class="${pctClass(c.pct_30d)}">${fmtPct(c.pct_30d)}</span></span>
+        </div>
+        ${sparkline(entry.history || [])}
+        <div class="extremes">
+          <div class="extreme atl">
+            <div class="lbl">Plus bas</div>
+            <div class="val">${fmtPrice(entry.atl_sol)}</div>
+            <div class="date">${timeAgo(entry.atl_ts)}</div>
+          </div>
+          <div class="extreme ath">
+            <div class="lbl">Plus haut</div>
+            <div class="val">${fmtPrice(entry.ath_sol)}</div>
+            <div class="date">${timeAgo(entry.ath_ts)}</div>
+          </div>
+        </div>
+        <div class="meta">
+          <span>${c.listed ?? "—"} listés</span>
+          <span>${c.sales_24h ?? 0} vente(s)/24h</span>
+        </div>
+        <div class="tx-list">
+          <div class="lbl">Dernières transactions</div>
+          ${tx}
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  document.getElementById("compareChart").innerHTML = comparisonChart(entries);
 }
 
 async function load(){
@@ -243,48 +506,25 @@ async function load(){
   try{
     const res = await fetch("./data.json?_=" + Date.now());
     if(!res.ok) throw new Error("data.json introuvable");
-    const data = await res.json();
-
-    ticker.innerHTML = `
-      <span>SOL/EUR <b>${data.sol_eur ? data.sol_eur.toFixed(2) + " €" : "—"}</b></span>
-      <span>Dernière mise à jour <b>${timeAgo(data.last_update)}</b></span>
-      <span>${Object.keys(data.collections || {}).length} collection(s) suivies</span>
-    `;
-
-    const entries = Object.values(data.collections || {});
-    if(entries.length === 0){
-      grid.innerHTML = `<div class="empty">Aucune donnée pour le moment — le premier passage du collecteur n'a pas encore tourné.</div>`;
-      return;
-    }
-
-    grid.innerHTML = entries.map(entry => {
-      const c = entry.current || {};
-      const ring = RING[c.signal] || "var(--watch)";
-      return `
-        <div class="card" style="--ring-color:${ring}">
-          <div class="medallion">${initials(entry.label)}</div>
-          <div class="name">${entry.label}</div>
-          <div class="price-sol">${c.floor_sol != null ? c.floor_sol.toFixed(3) + " SOL" : "—"}</div>
-          <div class="price-eur">${c.floor_eur != null ? c.floor_eur.toFixed(2) + " €" : "—"}</div>
-          <div class="badge">${c.signal || "—"}</div>
-          <div class="reason">${c.signal_reason || ""}</div>
-          ${sparkline(entry.history || [])}
-          <div class="meta">
-            <span>${c.listed ?? "—"} listés</span>
-            <span>${c.sales_24h ?? 0} vente(s)/24h</span>
-          </div>
-        </div>
-      `;
-    }).join("");
+    latestData = await res.json();
+    renderAll();
   }catch(err){
     console.error(err);
-    grid.innerHTML = '<div class="empty">Impossible de charger data.json — vérifie que le collecteur a tourné au moins une fois.</div>';
+    grid.innerHTML = `<div class="empty">Impossible de charger data.json — vérifie que le collecteur a tourné au moins une fois.</div>`;
     ticker.textContent = "—";
   }
 }
 
+document.getElementById("currencyToggle").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-currency]");
+  if(!btn) return;
+  currentCurrency = btn.dataset.currency;
+  document.querySelectorAll("#currencyToggle button").forEach(b => b.classList.toggle("active", b === btn));
+  renderAll();
+});
+
 load();
-setInterval(load, 5 * 60 * 1000); // rafraîchit la page toutes les 5 min
+setInterval(load, 5 * 60 * 1000);
 </script>
 </body>
 </html>

@@ -1,13 +1,19 @@
 # TML NFT Watch
 
-Suivi des collections NFT officielles Tomorrowland (Magic Eden), avec
-indicateurs simples et alertes Telegram — 100% gratuit, aucun serveur à gérer.
+Suivi de 3 collections NFT officielles Tomorrowland — **Letter**, **Reflection**
+et **Symbol** (Magic Eden), avec indicateurs, ATH/ATL depuis le contrat et
+alertes Telegram — 100% gratuit, aucun serveur à gérer.
 
 - **Collecteur** (`collector.py`) : interroge l'API publique Magic Eden +
-  CoinGecko, calcule les indicateurs et met à jour `docs/data.json`.
-- **Dashboard** (`docs/index.html`) : page statique qui lit `docs/data.json`.
+  CoinGecko, calcule les indicateurs, le plus bas/plus haut historique
+  (scan complet de l'historique on-chain au premier passage) et les 5
+  dernières transactions par série, puis met à jour `docs/data.json`.
+- **Dashboard** (`docs/index.html`) : page statique, thème clair, toggle
+  SOL/EUR, qui lit `docs/data.json`.
 - **Automatisation** : GitHub Actions exécute le collecteur toutes les
   15 minutes et publie le résultat.
+
+Voir [`CHANGELOG.md`](CHANGELOG.md) pour l'historique des versions.
 
 ## Mise en place (10 minutes)
 
@@ -77,6 +83,8 @@ ventes...) une fois qu'on a quelques semaines de données réelles.
 - Vue "budget objectif" : combien de SOL il faudrait pour garantir l'accès
   du groupe sur X années, comparé au floor actuel.
 - Export CSV de l'historique pour analyse plus poussée.
+- Toggle USD en plus de SOL/EUR.
+- Historique visuel (graphe complet, pas juste sparkline) pour l'ATH/ATL.
 
 ## Sources
 

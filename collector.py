@@ -20,14 +20,16 @@ COLLECTIONS = {
 }
 
 ME_STATS_URL = "https://api-mainnet.magiceden.dev/v2/collections/{symbol}/stats"
+ME_HOLDER_STATS_URL = "https://api-mainnet.magiceden.dev/v2/collections/{symbol}/holder_stats"
 ME_ACTIVITIES_URL = "https://api-mainnet.magiceden.dev/v2/collections/{symbol}/activities?offset={offset}&limit={limit}"
 SOL_PRICE_URL = "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=eur,usd"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(SCRIPT_DIR, "docs", "data.json")
-MAX_HISTORY_POINTS = 4000       # historique des snapshots floor (~90j à 15min)
+MAX_HISTORY_POINTS = 5760       # ~60 jours de snapshots à 15 min (24*60/15*60)
 RECENT_TX_COUNT = 5             # nb de tx affichées sous chaque carte
-MAX_SYNC_PAGES = 100            # garde-fou pour le scan complet ATH/ATL (jusqu'à 10 000 tx)
+MAX_SYNC_PAGES = 3000            # garde-fou dur (300 000 activités) — sert de filet, pas de limite pratique
+SYNC_TIME_BUDGET_SECONDS = 240   # limite réelle : 4 min max de scan par collection
 SYNC_PAGE_LIMIT = 100
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
@@ -177,14 +179,15 @@ def compute_signal(history, listed_now, listed_prev, sales_24h, floor_sol, ath_s
             score += 0.5
             reasons.append("baisse des annonces en vente (rétention)")
 
-    if floor_sol and atl_sol:
-        proximity_to_atl = floor_sol / atl_sol
-        if proximity_to_atl <= 1.15:
+    # --- Position relative dans la fourchette ATH-ATL --------------------
+    # (plutôt que deux seuils indépendants qui peuvent se déclencher
+    # ensemble et se contredire quand l'écart ATH-ATL est faible)
+    if floor_sol and ath_sol and atl_sol and ath_sol > atl_sol:
+        position = (floor_sol - atl_sol) / (ath_sol - atl_sol)  # 0=ATL, 1=ATH
+        if position <= 0.15:
             score += 1
             reasons.append("proche du plus bas historique")
-    if floor_sol and ath_sol:
-        proximity_to_ath = floor_sol / ath_sol
-        if proximity_to_ath >= 0.9:
+        elif position >= 0.85:
             score -= 1
             reasons.append("proche du plus haut historique")
 
@@ -199,48 +202,91 @@ def compute_signal(history, listed_now, listed_prev, sales_24h, floor_sol, ath_s
     return "SURVEILLER", ", ".join(reasons) if reasons else "Pas de mouvement net."
 
 
+def fetch_holder_count(symbol):
+    """
+    Récupère le nombre de porteurs uniques d'une collection. Le nom exact
+    du champ n'est pas garanti stable dans la doc publique de Magic Eden,
+    donc on essaie plusieurs clés candidates par sécurité plutôt que de
+    planter sur un nom qui aurait changé.
+    """
+    try:
+        stats = fetch_json(ME_HOLDER_STATS_URL.format(symbol=symbol))
+    except Exception as e:
+        print(f"[warn] holder_stats {symbol}: {e}")
+        return None
+    for key in ("uniqueHolders", "uniqueHolderCount", "holderCount", "totalHolders", "holders"):
+        if isinstance(stats, dict) and key in stats and stats[key] is not None:
+            try:
+                return int(stats[key])
+            except (TypeError, ValueError):
+                continue
+    print(f"[warn] holder_stats {symbol}: champ porteurs non trouvé dans {stats}")
+    return None
+
+
 def fetch_activities_page(symbol, offset, limit=SYNC_PAGE_LIMIT):
     url = ME_ACTIVITIES_URL.format(symbol=symbol, offset=offset, limit=limit)
     return fetch_json(url)
 
 
-def sync_all_time_extremes(symbol):
+def sync_all_time_extremes(symbol, start_offset=0, prev_atl_sol=None, prev_atl_ts=None,
+                            prev_ath_sol=None, prev_ath_ts=None):
     """
-    Parcourt tout l'historique des ventes on-chain (contrat de la collection)
-    pour déterminer le plus bas et le plus haut jamais atteints. Coûteux en
-    appels API : à faire une seule fois par collection (voir history_synced).
+    Parcourt l'historique des ventes on-chain (contrat de la collection)
+    pour déterminer le plus bas et le plus haut jamais atteints. Reprenable :
+    si le budget temps (SYNC_TIME_BUDGET_SECONDS) est atteint avant la fin,
+    renvoie l'offset atteint pour que le prochain passage reprenne pile là
+    où celui-ci s'est arrêté, au lieu de tout rescanner depuis le début.
     """
-    atl_sol = atl_ts = ath_sol = ath_ts = None
-    offset = 0
+    atl_sol, atl_ts = prev_atl_sol, prev_atl_ts
+    ath_sol, ath_ts = prev_ath_sol, prev_ath_ts
+    oldest_ts = None
+    offset = start_offset
     pages = 0
+    started = time.monotonic()
+    complete = False
     while pages < MAX_SYNC_PAGES:
+        if time.monotonic() - started > SYNC_TIME_BUDGET_SECONDS:
+            print(f"[info] sync {symbol}: budget temps atteint après {pages} page(s), reprise à offset={offset}")
+            break
         try:
             batch = fetch_activities_page(symbol, offset)
         except Exception as e:
             print(f"[warn] sync ATH/ATL {symbol} offset={offset}: {e}")
             break
         if not batch:
+            complete = True
             break
         for a in batch:
+            bt = a.get("blockTime")
+            ts_iso = datetime.fromtimestamp(bt, tz=timezone.utc).isoformat() if bt else None
+            if bt and (oldest_ts is None or ts_iso < oldest_ts):
+                oldest_ts = ts_iso
             if a.get("type") != "buyNow":
                 continue
             price_sol = normalize_price_to_sol(a.get("price"))
             if price_sol is None:
                 continue
-            bt = a.get("blockTime")
-            ts_iso = datetime.fromtimestamp(bt, tz=timezone.utc).isoformat() if bt else None
             if atl_sol is None or price_sol < atl_sol:
                 atl_sol, atl_ts = price_sol, ts_iso
             if ath_sol is None or price_sol > ath_sol:
                 ath_sol, ath_ts = price_sol, ts_iso
         if len(batch) < SYNC_PAGE_LIMIT:
+            complete = True
             break
         offset += SYNC_PAGE_LIMIT
         pages += 1
         time.sleep(0.15)
-    print(f"[info] sync ATH/ATL {symbol}: {pages+1} page(s) scannée(s), "
-          f"ATL={atl_sol}, ATH={ath_sol}")
-    return {"atl_sol": atl_sol, "atl_ts": atl_ts, "ath_sol": ath_sol, "ath_ts": ath_ts}
+    elapsed = round(time.monotonic() - started, 1)
+    print(f"[info] sync ATH/ATL {symbol}: {pages+1} page(s), {elapsed}s, "
+          f"complet={complete}, offset atteint={offset}, ATL={atl_sol}, ATH={ath_sol}")
+    return {
+        "atl_sol": atl_sol, "atl_ts": atl_ts,
+        "ath_sol": ath_sol, "ath_ts": ath_ts,
+        "synced_back_to": oldest_ts,
+        "history_complete": complete,
+        "next_offset": offset,
+    }
 
 
 def build_recent_tx(activities):
@@ -301,14 +347,22 @@ def main():
         })
         entry["history"] = history[-MAX_HISTORY_POINTS:]
 
-        # --- ATH / ATL depuis le contrat ---------------------------------
-        if not entry.get("history_synced"):
-            extremes = sync_all_time_extremes(symbol)
+        # --- ATH / ATL depuis le contrat (reprenable sur plusieurs runs) --
+        if not entry.get("history_complete"):
+            extremes = sync_all_time_extremes(
+                symbol,
+                start_offset=entry.get("sync_offset", 0),
+                prev_atl_sol=entry.get("atl_sol"), prev_atl_ts=entry.get("atl_ts"),
+                prev_ath_sol=entry.get("ath_sol"), prev_ath_ts=entry.get("ath_ts"),
+            )
             entry["ath_sol"] = extremes["ath_sol"]
             entry["ath_ts"] = extremes["ath_ts"]
             entry["atl_sol"] = extremes["atl_sol"]
             entry["atl_ts"] = extremes["atl_ts"]
-            entry["history_synced"] = True
+            entry["synced_back_to"] = extremes["synced_back_to"]
+            entry["history_complete"] = extremes["history_complete"]
+            entry["sync_offset"] = extremes["next_offset"]
+            entry["history_synced"] = True  # conservé pour compatibilité avec data.json existants
             entry["synced_at"] = now_iso
         else:
             for a in activities:
@@ -333,6 +387,8 @@ def main():
         pct_7d = pct_change_over(entry["history"], 7)
         pct_30d = pct_change_over(entry["history"], 30)
 
+        holders = fetch_holder_count(symbol)
+
         entry["current"] = {
             "floor_sol": floor_sol,
             "floor_eur": round(floor_sol * sol_eur, 2) if floor_sol and sol_eur else None,
@@ -340,6 +396,7 @@ def main():
             "listed": listed_count,
             "avg_price_24h_sol": avg_price_24h,
             "sales_24h": sales_24h,
+            "holders": holders,
             "signal": signal,
             "signal_reason": reason,
             "pct_7d": pct_7d,
@@ -370,6 +427,15 @@ def main():
     data["last_update"] = now_iso
     data["sol_eur"] = sol_eur
     data["sol_usdc"] = sol_usdc
+    holder_counts = [
+        e["current"]["holders"] for e in data["collections"].values()
+        if e.get("current", {}).get("holders") is not None
+    ]
+    data["total_holders_naive"] = sum(holder_counts) if holder_counts else None
+    # ATTENTION : somme NON dédupliquée — un wallet possédant des NFT de
+    # plusieurs séries est compté plusieurs fois. Magic Eden ne fournit pas
+    # la liste des wallets, seulement un compte par collection, donc un vrai
+    # dédoublonnage across-collections nécessiterait un scan on-chain complet.
     save_data(data)
 
     if alerts:

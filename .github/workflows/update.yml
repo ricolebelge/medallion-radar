@@ -5,6 +5,10 @@ on:
     - cron: "*/15 * * * *"   # toutes les 15 minutes
   workflow_dispatch: {}       # permet aussi de lancer manuellement depuis l'onglet Actions
 
+concurrency:
+  group: tml-nft-collector
+  cancel-in-progress: false   # si un run est encore en cours (scan ATH/ATL long), le suivant attend son tour au lieu de se chevaucher
+
 permissions:
   contents: write
 

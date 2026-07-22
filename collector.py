@@ -48,6 +48,35 @@ TX_TYPE_LABELS_FR = {
 }
 
 
+def extract_ts_epoch(activity):
+    """
+    Certaines activités (notamment les événements auto-générés par les pools
+    de market-making, très fréquents sur ces collections) semblent ne pas
+    toujours porter blockTime de façon fiable. On se rabat sur createdAt
+    (toujours présent en pratique, format ISO) plutôt que de perdre la date.
+    """
+    bt = activity.get("blockTime")
+    if bt:
+        try:
+            return float(bt)
+        except (TypeError, ValueError):
+            pass
+    created = activity.get("createdAt")
+    if created:
+        try:
+            return datetime.fromisoformat(created.replace("Z", "+00:00")).timestamp()
+        except (TypeError, ValueError):
+            pass
+    return None
+
+
+def extract_ts_iso(activity):
+    epoch = extract_ts_epoch(activity)
+    if epoch is None:
+        return None
+    return datetime.fromtimestamp(epoch, tz=timezone.utc).isoformat()
+
+
 def fetch_json(url):
     req = urllib.request.Request(url, headers={"User-Agent": "tml-nft-watch/2.0"})
     with urllib.request.urlopen(req, timeout=20) as r:
@@ -206,20 +235,31 @@ def fetch_holder_count(symbol):
     """
     Récupère le nombre de porteurs uniques d'une collection. Le nom exact
     du champ n'est pas garanti stable dans la doc publique de Magic Eden,
-    donc on essaie plusieurs clés candidates par sécurité plutôt que de
-    planter sur un nom qui aurait changé.
+    donc on essaie plusieurs clés candidates et on déballe une éventuelle
+    enveloppe ("results"/"data") plutôt que de planter sur un format inattendu.
     """
     try:
         stats = fetch_json(ME_HOLDER_STATS_URL.format(symbol=symbol))
     except Exception as e:
         print(f"[warn] holder_stats {symbol}: {e}")
         return None
-    for key in ("uniqueHolders", "uniqueHolderCount", "holderCount", "totalHolders", "holders"):
-        if isinstance(stats, dict) and key in stats and stats[key] is not None:
-            try:
-                return int(stats[key])
-            except (TypeError, ValueError):
-                continue
+    candidates = [stats]
+    if isinstance(stats, dict):
+        for wrapper_key in ("results", "data", "result"):
+            if isinstance(stats.get(wrapper_key), dict):
+                candidates.append(stats[wrapper_key])
+    for obj in candidates:
+        if not isinstance(obj, dict):
+            continue
+        for key in (
+            "uniqueHolders", "uniqueHolderCount", "holderCount", "totalHolders",
+            "holders", "totalUniqueHolders", "numHolders", "holder_count",
+        ):
+            if key in obj and obj[key] is not None:
+                try:
+                    return int(obj[key])
+                except (TypeError, ValueError):
+                    continue
     print(f"[warn] holder_stats {symbol}: champ porteurs non trouvé dans {stats}")
     return None
 
@@ -258,8 +298,7 @@ def sync_all_time_extremes(symbol, start_offset=0, prev_atl_sol=None, prev_atl_t
             complete = True
             break
         for a in batch:
-            bt = a.get("blockTime")
-            ts_iso = datetime.fromtimestamp(bt, tz=timezone.utc).isoformat() if bt else None
+            ts_iso = extract_ts_iso(a)
             if bt and (oldest_ts is None or ts_iso < oldest_ts):
                 oldest_ts = ts_iso
             if a.get("type") != "buyNow":
@@ -292,12 +331,11 @@ def sync_all_time_extremes(symbol, start_offset=0, prev_atl_sol=None, prev_atl_t
 def build_recent_tx(activities):
     tx_list = []
     for a in activities[:RECENT_TX_COUNT]:
-        bt = a.get("blockTime")
         tx_list.append({
             "type": a.get("type"),
             "type_label": TX_TYPE_LABELS_FR.get(a.get("type"), a.get("type") or "—"),
             "price_sol": normalize_price_to_sol(a.get("price")),
-            "ts": datetime.fromtimestamp(bt, tz=timezone.utc).isoformat() if bt else None,
+            "ts": extract_ts_iso(a),
         })
     return tx_list
 
@@ -329,7 +367,7 @@ def main():
         cutoff = time.time() - 86400
         sales_24h = sum(
             1 for a in activities
-            if a.get("type") == "buyNow" and a.get("blockTime", 0) >= cutoff
+            if a.get("type") == "buyNow" and (extract_ts_epoch(a) or 0) >= cutoff
         )
 
         entry = data["collections"].setdefault(symbol, {"label": label, "history": [], "last_signal": None})
@@ -371,8 +409,7 @@ def main():
                 price_sol = normalize_price_to_sol(a.get("price"))
                 if price_sol is None:
                     continue
-                bt = a.get("blockTime")
-                ts_iso = datetime.fromtimestamp(bt, tz=timezone.utc).isoformat() if bt else None
+                ts_iso = extract_ts_iso(a)
                 if entry.get("atl_sol") is None or price_sol < entry["atl_sol"]:
                     entry["atl_sol"], entry["atl_ts"] = price_sol, ts_iso
                 if entry.get("ath_sol") is None or price_sol > entry["ath_sol"]:

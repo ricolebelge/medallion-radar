@@ -21,7 +21,7 @@ COLLECTIONS = {
 
 ME_STATS_URL = "https://api-mainnet.magiceden.dev/v2/collections/{symbol}/stats"
 ME_ACTIVITIES_URL = "https://api-mainnet.magiceden.dev/v2/collections/{symbol}/activities?offset={offset}&limit={limit}"
-SOL_EUR_URL = "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=eur"
+SOL_PRICE_URL = "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=eur,usd"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(SCRIPT_DIR, "docs", "data.json")
@@ -52,12 +52,13 @@ def fetch_json(url):
         return json.loads(r.read().decode())
 
 
-def get_sol_eur():
+def get_sol_rates():
     try:
-        return fetch_json(SOL_EUR_URL)["solana"]["eur"]
+        prices = fetch_json(SOL_PRICE_URL)["solana"]
+        return prices.get("eur"), prices.get("usd")
     except Exception as e:
-        print(f"[warn] impossible de récupérer SOL/EUR: {e}")
-        return None
+        print(f"[warn] impossible de récupérer les taux SOL: {e}")
+        return None, None
 
 
 def normalize_price_to_sol(raw):
@@ -100,7 +101,7 @@ def load_data():
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE) as f:
             return json.load(f)
-    return {"collections": {}, "last_update": None, "sol_eur": None}
+    return {"collections": {}, "last_update": None, "sol_eur": None, "sol_usdc": None}
 
 
 def save_data(data):
@@ -257,7 +258,7 @@ def build_recent_tx(activities):
 
 def main():
     data = load_data()
-    sol_eur = get_sol_eur()
+    sol_eur, sol_usdc = get_sol_rates()
     now_iso = datetime.now(timezone.utc).isoformat()
     alerts = []
 
@@ -335,6 +336,7 @@ def main():
         entry["current"] = {
             "floor_sol": floor_sol,
             "floor_eur": round(floor_sol * sol_eur, 2) if floor_sol and sol_eur else None,
+            "floor_usdc": round(floor_sol * sol_usdc, 2) if floor_sol and sol_usdc else None,
             "listed": listed_count,
             "avg_price_24h_sol": avg_price_24h,
             "sales_24h": sales_24h,
@@ -367,6 +369,7 @@ def main():
 
     data["last_update"] = now_iso
     data["sol_eur"] = sol_eur
+    data["sol_usdc"] = sol_usdc
     save_data(data)
 
     if alerts:

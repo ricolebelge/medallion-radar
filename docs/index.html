@@ -283,6 +283,7 @@
         <div class="currency-toggle" id="currencyToggle">
           <button data-currency="SOL" class="active">SOL</button>
           <button data-currency="EUR">EUR</button>
+          <button data-currency="USDC">USDC</button>
         </div>
       </div>
     </header>
@@ -349,6 +350,11 @@ function fmtPrice(sol){
     const rate = latestData && latestData.sol_eur;
     if(!rate) return "—";
     return (sol * rate).toFixed(2) + " €";
+  }
+  if(currentCurrency === "USDC"){
+    const rate = latestData && latestData.sol_usdc;
+    if(!rate) return "—";
+    return (sol * rate).toFixed(2) + " USDC";
   }
   return sol.toFixed(3) + " SOL";
 }
@@ -446,6 +452,7 @@ function renderAll(){
 
   ticker.innerHTML = `
     <span>SOL/EUR <b>${data.sol_eur ? data.sol_eur.toFixed(2) + " €" : "—"}</b></span>
+    <span>SOL/USDC <b>${data.sol_usdc ? data.sol_usdc.toFixed(2) : "—"}</b></span>
     <span>Dernière mise à jour <b>${timeAgo(data.last_update)}</b></span>
     <span>${Object.keys(data.collections || {}).length} collection(s) suivies</span>
   `;

@@ -253,7 +253,7 @@ async function load(){
 
     const entries = Object.values(data.collections || {});
     if(entries.length === 0){
-      grid.innerHTML = '<div class="empty">Aucune donnée pour le moment — le premier passage du collecteur n\\'a pas encore tourné.</div>';
+      grid.innerHTML = `<div class="empty">Aucune donnée pour le moment — le premier passage du collecteur n'a pas encore tourné.</div>`;
       return;
     }
 

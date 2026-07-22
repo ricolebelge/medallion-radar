@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TML NFT Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0B0E1A;
+    --surface:#141a2e;
+    --surface-raised:#1c2440;
+    --gold:#C9A961;
+    --mist:#8891a8;
+    --parchment:#ECE7DA;
+    --buy:#4FD1AE;
+    --caution:#E2725B;
+    --watch:#C9A961;
+    --hairline: rgba(201,169,97,0.18);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,169,97,0.10), transparent),
+      var(--void);
+    color:var(--parchment);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:56px 24px 80px;}
+
+  header{margin-bottom:48px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Cinzel',serif;
+    font-weight:700;
+    font-size:clamp(32px,5vw,52px);
+    margin:0 0 12px;
+    letter-spacing:0.02em;
+  }
+  .sub{
+    color:var(--mist);
+    font-size:16px;
+    max-width:560px;
+    line-height:1.5;
+    margin:0 0 28px;
+  }
+  .ticker{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--mist);
+    border-top:1px solid var(--hairline);
+    border-bottom:1px solid var(--hairline);
+    padding:12px 0;
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  .ticker b{color:var(--parchment);font-weight:500;}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+    gap:20px;
+    margin-top:40px;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:16px;
+    padding:28px 22px 22px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 50% 0%, rgba(201,169,97,0.06), transparent 60%);
+    pointer-events:none;
+  }
+  .medallion{
+    width:76px;height:76px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cinzel',serif;font-weight:700;font-size:22px;
+    background:var(--surface-raised);
+    color:var(--gold);
+    margin-bottom:18px;
+    position:relative;
+  }
+  .medallion::after{
+    content:"";
+    position:absolute;inset:-6px;
+    border-radius:50%;
+    border:2px solid var(--ring-color, var(--watch));
+    box-shadow:0 0 18px -2px var(--ring-color, var(--watch));
+    animation:pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:0.55;}
+    50%{opacity:1;}
+  }
+  .name{
+    font-family:'Cinzel',serif;
+    font-weight:500;
+    font-size:16px;
+    margin-bottom:6px;
+    letter-spacing:0.01em;
+  }
+  .price-sol{
+    font-family:'JetBrains Mono',monospace;
+    font-size:22px;
+    font-weight:700;
+    color:var(--parchment);
+  }
+  .price-eur{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--mist);
+    margin-bottom:14px;
+  }
+  .badge{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:999px;
+    border:1px solid var(--ring-color, var(--watch));
+    color:var(--ring-color, var(--watch));
+    margin-bottom:14px;
+  }
+  .reason{
+    font-size:12.5px;
+    color:var(--mist);
+    line-height:1.5;
+    min-height:34px;
+    margin-bottom:14px;
+  }
+  .spark{width:100%;height:36px;}
+  .meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--mist);
+    display:flex;
+    justify-content:space-between;
+    width:100%;
+    margin-top:10px;
+    border-top:1px solid var(--hairline);
+    padding-top:10px;
+  }
+
+  footer{
+    margin-top:56px;
+    padding-top:20px;
+    border-top:1px solid var(--hairline);
+    color:var(--mist);
+    font-size:12.5px;
+    line-height:1.6;
+  }
+  footer a{color:var(--gold);}
+  .empty{color:var(--mist);font-family:'JetBrains Mono',monospace;font-size:13px;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Suivi non-officiel &middot; groupe privé</div>
+      <h1>TML NFT Watch</h1>
+      <p class="sub">Floor price, volume et signaux d'achat/vente sur les medallions officiels Tomorrowland, calculés à partir des transactions réelles sur Magic Eden.</p>
+      <div class="ticker" id="ticker">Chargement…</div>
+    </header>
+
+    <div class="grid" id="grid">
+      <div class="empty">Chargement des données…</div>
+    </div>
+
+    <footer>
+      Ces signaux sont des indicateurs heuristiques (moyennes mobiles, volume, pression de l'offre) construits à partir de l'historique collecté — ce n'est pas un conseil financier. Le marché des NFT est peu liquide et peut bouger fortement sur peu de transactions.<br>
+      Données : <a href="https://magiceden.io" target="_blank" rel="noopener">Magic Eden</a> · Taux : <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a>
+    </footer>
+  </div>
+
+<script>
+const RING = {
+  "SIGNAL ACHAT": "var(--buy)",
+  "PRUDENCE": "var(--caution)",
+  "SURVEILLER": "var(--watch)",
+  "COLLECTE EN COURS": "var(--mist)",
+};
+
+function timeAgo(iso){
+  if(!iso) return "—";
+  const diffMs = Date.now() - new Date(iso).getTime();
+  const min = Math.round(diffMs/60000);
+  if(min < 1) return "à l'instant";
+  if(min < 60) return `il y a ${min} min`;
+  const h = Math.round(min/60);
+  if(h < 24) return `il y a ${h} h`;
+  return `il y a ${Math.round(h/24)} j`;
+}
+
+function sparkline(history){
+  const pts = history.filter(h => h.floor_sol != null).slice(-40).map(h => h.floor_sol);
+  if(pts.length < 2) return "";
+  const min = Math.min(...pts), max = Math.max(...pts);
+  const range = (max - min) || 1;
+  const w = 200, h = 36, pad = 3;
+  const step = (w - pad*2) / (pts.length - 1);
+  const coords = pts.map((v,i) => {
+    const x = pad + i*step;
+    const y = h - pad - ((v - min) / range) * (h - pad*2);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(" ");
+  const up = pts[pts.length-1] >= pts[0];
+  const color = up ? "var(--buy)" : "var(--caution)";
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+    <polyline points="${coords}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
+}
+
+function initials(label){
+  return label.split(" ").filter(w => w.length > 2 || /^[A-Z]/.test(w)).slice(0,1)[0]?.slice(0,3).toUpperCase() || label.slice(0,3).toUpperCase();
+}
+
+async function load(){
+  const grid = document.getElementById("grid");
+  const ticker = document.getElementById("ticker");
+  try{
+    const res = await fetch("./data.json?_=" + Date.now());
+    if(!res.ok) throw new Error("data.json introuvable");
+    const data = await res.json();
+
+    ticker.innerHTML = `
+      <span>SOL/EUR <b>${data.sol_eur ? data.sol_eur.toFixed(2) + " €" : "—"}</b></span>
+      <span>Dernière mise à jour <b>${timeAgo(data.last_update)}</b></span>
+      <span>${Object.keys(data.collections || {}).length} collection(s) suivies</span>
+    `;
+
+    const entries = Object.values(data.collections || {});
+    if(entries.length === 0){
+      grid.innerHTML = '<div class="empty">Aucune donnée pour le moment — le premier passage du collecteur n\\'a pas encore tourné.</div>';
+      return;
+    }
+
+    grid.innerHTML = entries.map(entry => {
+      const c = entry.current || {};
+      const ring = RING[c.signal] || "var(--watch)";
+      return `
+        <div class="card" style="--ring-color:${ring}">
+          <div class="medallion">${initials(entry.label)}</div>
+          <div class="name">${entry.label}</div>
+          <div class="price-sol">${c.floor_sol != null ? c.floor_sol.toFixed(3) + " SOL" : "—"}</div>
+          <div class="price-eur">${c.floor_eur != null ? c.floor_eur.toFixed(2) + " €" : "—"}</div>
+          <div class="badge">${c.signal || "—"}</div>
+          <div class="reason">${c.signal_reason || ""}</div>
+          ${sparkline(entry.history || [])}
+          <div class="meta">
+            <span>${c.listed ?? "—"} listés</span>
+            <span>${c.sales_24h ?? 0} vente(s)/24h</span>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }catch(err){
+    console.error(err);
+    grid.innerHTML = '<div class="empty">Impossible de charger data.json — vérifie que le collecteur a tourné au moins une fois.</div>';
+    ticker.textContent = "—";
+  }
+}
+
+load();
+setInterval(load, 5 * 60 * 1000); // rafraîchit la page toutes les 5 min
+</script>
+</body>
+</html>

@@ -340,6 +340,54 @@ def build_recent_tx(activities):
     return tx_list
 
 
+MARKET_ALERT_ICONS = {"list": "📋", "buyNow": "💰"}
+MARKET_ALERT_TITLES = {"list": "Nouvelle offre vendeur", "buyNow": "Achat réalisé"}
+
+
+def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
+    """
+    Alerte Telegram pour chaque nouvelle offre vendeur (list) et achat
+    réalisé (buyNow), avec écart vs floor et prix en SOL/USDC.
+    Dédoublonnage via le timestamp de la dernière activité déjà notifiée.
+    """
+    last_ts = entry.get("last_market_alert_ts")
+    relevant = []
+    for a in activities:
+        if a.get("type") not in MARKET_ALERT_ICONS:
+            continue
+        price_sol = normalize_price_to_sol(a.get("price"))
+        ts_iso = extract_ts_iso(a)
+        if price_sol is None or ts_iso is None:
+            continue
+        relevant.append((ts_iso, a.get("type"), price_sol))
+    relevant.sort(key=lambda x: x[0])  # plus ancien -> plus récent
+
+    if last_ts is None:
+        # Premier run : on fixe la référence sans spammer l'historique existant
+        if relevant:
+            entry["last_market_alert_ts"] = relevant[-1][0]
+        return []
+
+    new_alerts = []
+    newest_ts = last_ts
+    for ts_iso, tx_type, price_sol in relevant:
+        if ts_iso <= last_ts:
+            continue
+        newest_ts = max(newest_ts, ts_iso)
+        icon = MARKET_ALERT_ICONS[tx_type]
+        title = MARKET_ALERT_TITLES[tx_type]
+        spread_txt = ""
+        if floor_sol:
+            spread_pct = (price_sol - floor_sol) / floor_sol * 100
+            sign = "+" if spread_pct >= 0 else ""
+            spread_txt = f" ({sign}{spread_pct:.1f}% vs floor {floor_sol:.3f})"
+        usdc_txt = f"\n≈ {price_sol * sol_usdc:,.0f} USDC".replace(",", " ") if sol_usdc else ""
+        new_alerts.append(f"{icon} <b>{label}</b> — {title}\n{price_sol:.3f} SOL{spread_txt}{usdc_txt}")
+
+    entry["last_market_alert_ts"] = newest_ts
+    return new_alerts
+
+
 def main():
     data = load_data()
     sol_eur, sol_usdc = get_sol_rates()
@@ -359,7 +407,7 @@ def main():
         avg_price_24h = normalize_price_to_sol(stats.get("avgPrice24hr"))
 
         try:
-            activities = fetch_activities_page(symbol, 0, limit=20)
+            activities = fetch_activities_page(symbol, 0, limit=50)
         except Exception as e:
             print(f"[warn] activities {symbol}: {e}")
             activities = []
@@ -416,6 +464,7 @@ def main():
                     entry["ath_sol"], entry["ath_ts"] = price_sol, ts_iso
 
         entry["recent_tx"] = build_recent_tx(activities)
+        alerts.extend(build_market_alerts(entry, activities, label, floor_sol, sol_usdc))
 
         signal, reason = compute_signal(
             entry["history"], listed_count, listed_prev, sales_24h,

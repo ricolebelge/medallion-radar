@@ -470,7 +470,7 @@ def main():
         cutoff = time.time() - 86400
         sales_24h = sum(
             1 for a in activities
-            if a.get("type") == "buyNow" and (extract_ts_epoch(a) or 0) >= cutoff
+            if a.get("type") in ("buyNow", "acceptBid") and (extract_ts_epoch(a) or 0) >= cutoff
         )
 
         entry = data["collections"].setdefault(symbol, {"label": label, "history": [], "last_signal": None})

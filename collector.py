@@ -341,7 +341,7 @@ def sync_all_time_extremes(symbol, start_offset=0, prev_atl_sol=None, prev_atl_t
             break
         for a in batch:
             ts_iso = extract_ts_iso(a)
-            if bt and (oldest_ts is None or ts_iso < oldest_ts):
+            if ts_iso and (oldest_ts is None or ts_iso < oldest_ts):
                 oldest_ts = ts_iso
             if a.get("type") != "buyNow":
                 continue
@@ -531,21 +531,31 @@ def main():
 
         # --- ATH / ATL depuis le contrat (reprenable sur plusieurs runs) --
         if not entry.get("history_complete"):
-            extremes = sync_all_time_extremes(
-                symbol,
-                start_offset=entry.get("sync_offset", 0),
-                prev_atl_sol=entry.get("atl_sol"), prev_atl_ts=entry.get("atl_ts"),
-                prev_ath_sol=entry.get("ath_sol"), prev_ath_ts=entry.get("ath_ts"),
-            )
-            entry["ath_sol"] = extremes["ath_sol"]
-            entry["ath_ts"] = extremes["ath_ts"]
-            entry["atl_sol"] = extremes["atl_sol"]
-            entry["atl_ts"] = extremes["atl_ts"]
-            entry["synced_back_to"] = extremes["synced_back_to"]
-            entry["history_complete"] = extremes["history_complete"]
-            entry["sync_offset"] = extremes["next_offset"]
-            entry["history_synced"] = True  # conservé pour compatibilité avec data.json existants
-            entry["synced_at"] = now_iso
+            try:
+                extremes = sync_all_time_extremes(
+                    symbol,
+                    start_offset=entry.get("sync_offset", 0),
+                    prev_atl_sol=entry.get("atl_sol"), prev_atl_ts=entry.get("atl_ts"),
+                    prev_ath_sol=entry.get("ath_sol"), prev_ath_ts=entry.get("ath_ts"),
+                )
+                entry["ath_sol"] = extremes["ath_sol"]
+                entry["ath_ts"] = extremes["ath_ts"]
+                entry["atl_sol"] = extremes["atl_sol"]
+                entry["atl_ts"] = extremes["atl_ts"]
+                entry["synced_back_to"] = extremes["synced_back_to"]
+                entry["history_complete"] = extremes["history_complete"]
+                entry["sync_offset"] = extremes["next_offset"]
+                entry["history_synced"] = True  # conservé pour compatibilité avec data.json existants
+                entry["synced_at"] = now_iso
+                data.setdefault("sync_debug", {})[symbol] = {
+                    "status": "ok",
+                    "offset_before": entry.get("sync_offset", 0),
+                    "offset_after": extremes["next_offset"],
+                    "complete": extremes["history_complete"],
+                }
+            except Exception as e:
+                print(f"[warn] sync ATH/ATL {symbol}: {e}")
+                data.setdefault("sync_debug", {})[symbol] = {"status": "error", "error": str(e)}
         else:
             for a in activities:
                 if a.get("type") != "buyNow":

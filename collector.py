@@ -569,17 +569,8 @@ def main():
                     entry["sync_offset"] = extremes["next_offset"]
                 entry["history_synced"] = True  # conservé pour compatibilité avec data.json existants
                 entry["synced_at"] = now_iso
-                data.setdefault("sync_debug", {})[symbol] = {
-                    "status": "ok",
-                    "offset_before": entry.get("sync_offset", 0),
-                    "offset_after": extremes["next_offset"],
-                    "complete": extremes["history_complete"],
-                    "api_limit_reached": extremes["api_limit_reached"],
-                    "last_error": extremes.get("last_error"),
-                }
             except Exception as e:
                 print(f"[warn] sync ATH/ATL {symbol}: {e}")
-                data.setdefault("sync_debug", {})[symbol] = {"status": "error", "error": str(e)}
         else:
             for a in activities:
                 if a.get("type") != "buyNow":

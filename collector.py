@@ -444,6 +444,8 @@ def main():
 
         try:
             activities = fetch_activities_page(symbol, 0, limit=50)
+            if activities and "raw_activity_debug" not in data:
+                data["raw_activity_debug"] = activities[0]
         except Exception as e:
             print(f"[warn] activities {symbol}: {e}")
             activities = []

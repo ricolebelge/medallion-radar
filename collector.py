@@ -463,6 +463,17 @@ def main():
 
         try:
             activities = fetch_activities_page(symbol, 0, limit=50)
+            if activities:
+                oldest_epoch = min((extract_ts_epoch(a) or time.time()) for a in activities)
+                coverage_hours = (time.time() - oldest_epoch) / 3600
+                type_counts = {}
+                for a in activities:
+                    t = a.get("type")
+                    type_counts[t] = type_counts.get(t, 0) + 1
+                data.setdefault("coverage_debug", {})[symbol] = {
+                    "coverage_hours": round(coverage_hours, 2),
+                    "type_counts": type_counts,
+                }
         except Exception as e:
             print(f"[warn] activities {symbol}: {e}")
             activities = []

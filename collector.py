@@ -183,11 +183,17 @@ def pct_change_over(history, days):
     return round((current_floor - base_floor) / base_floor * 100, 1)
 
 
-def compute_signal(history, listed_now, listed_prev, sales_24h, floor_sol, ath_sol, atl_sol):
+def compute_signal(history, listed_now, listed_prev, sales_24h, floor_sol, ath_sol, atl_sol, history_complete=False):
     """
     Combine tendance (moyennes mobiles), pression de l'offre, activité
     récente, et position par rapport au plus bas/plus haut historique —
     pour donner une indication explicite d'achat ou de vente.
+
+    Tant que le scan ATH/ATL n'est pas terminé (history_complete=False),
+    l'ATH/ATL connu n'est qu'une borne partielle (le vrai extrême peut être
+    plus loin, pas encore scanné) : son poids dans le score est réduit de
+    moitié et la raison affichée le précise, pour éviter un signal PRUDENCE/
+    VENDRE prématuré basé sur un plus haut sous-estimé.
     """
     floors = [h["floor_sol"] for h in history if h.get("floor_sol")]
     if len(floors) < 5:
@@ -224,12 +230,14 @@ def compute_signal(history, listed_now, listed_prev, sales_24h, floor_sol, ath_s
     # ensemble et se contredire quand l'écart ATH-ATL est faible)
     if floor_sol and ath_sol and atl_sol and ath_sol > atl_sol:
         position = (floor_sol - atl_sol) / (ath_sol - atl_sol)  # 0=ATL, 1=ATH
+        weight = 1.0 if history_complete else 0.5
+        partial_tag = "" if history_complete else " (ATH/ATL partiel, fiabilité réduite)"
         if position <= 0.15:
-            score += 1
-            reasons.append("proche du plus bas historique")
+            score += weight
+            reasons.append(f"proche du plus bas historique{partial_tag}")
         elif position >= 0.85:
-            score -= 1
-            reasons.append("proche du plus haut historique")
+            score -= weight
+            reasons.append(f"proche du plus haut historique{partial_tag}")
 
     if score >= 2:
         return "ACHAT FORT", ", ".join(reasons)
@@ -557,6 +565,7 @@ def main():
         signal, reason = compute_signal(
             entry["history"], listed_count, listed_prev, sales_24h,
             floor_sol, entry.get("ath_sol"), entry.get("atl_sol"),
+            history_complete=entry.get("history_complete", False),
         )
         pct_7d = pct_change_over(entry["history"], 7)
         pct_30d = pct_change_over(entry["history"], 30)

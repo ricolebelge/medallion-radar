@@ -418,9 +418,11 @@ def main():
 
         try:
             activities = fetch_activities_page(symbol, 0, limit=50)
+            data.setdefault("activities_debug", {})[symbol] = {"status": "ok", "count": len(activities)}
         except Exception as e:
             print(f"[warn] activities {symbol}: {e}")
             activities = []
+            data.setdefault("activities_debug", {})[symbol] = {"status": "error", "error": str(e)}
 
         cutoff = time.time() - 86400
         sales_24h = sum(

@@ -360,7 +360,8 @@ MARKET_ALERT_DEDUP_WINDOW_SECONDS = 30 * 60  # 30 min : ignore les re-listings i
 def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
     """
     Alerte Telegram pour chaque nouvelle offre vendeur (list) et achat
-    réalisé (buyNow), avec écart vs floor et prix en SOL/USDC.
+    réalisé (buyNow), avec écart vs floor, prix en SOL/USDC, et liens
+    cliquables vers le wallet (Solscan + Magic Eden) et la NFT concernée.
     Dédoublonnage :
       1) par timestamp (ne revoit pas ce qui a déjà été scanné)
       2) par (type, prix arrondi) sur une fenêtre de 30 min, pour ignorer
@@ -375,7 +376,7 @@ def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
         ts_iso = extract_ts_iso(a)
         if price_sol is None or ts_iso is None:
             continue
-        relevant.append((ts_iso, a.get("type"), price_sol))
+        relevant.append((ts_iso, a))
     relevant.sort(key=lambda x: x[0])  # plus ancien -> plus récent
 
     if last_ts is None:
@@ -391,10 +392,13 @@ def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
 
     new_alerts = []
     newest_ts = last_ts
-    for ts_iso, tx_type, price_sol in relevant:
+    for ts_iso, a in relevant:
         if ts_iso <= last_ts:
             continue
         newest_ts = max(newest_ts, ts_iso)
+
+        tx_type = a.get("type")
+        price_sol = normalize_price_to_sol(a.get("price"))
 
         dedup_key = f"{tx_type}:{price_sol:.3f}"
         now_epoch = _epoch(ts_iso)
@@ -414,13 +418,26 @@ def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
             sign = "+" if spread_pct >= 0 else ""
             spread_txt = f" ({sign}{spread_pct:.1f}% vs floor {floor_sol:.3f})"
         usdc_txt = f"\n≈ {price_sol * sol_usdc:,.0f} USDC".replace(",", " ") if sol_usdc else ""
-        new_alerts.append(f"{icon} <b>{label}</b> — {title}\n{price_sol:.3f} SOL{spread_txt}{usdc_txt}")
+
+        # Wallet pertinent : le vendeur pour une mise en vente, l'acheteur pour un achat
+        wallet = a.get("buyer") if tx_type == "buyNow" else a.get("seller")
+        links = []
+        if wallet:
+            links.append(f'<a href="https://solscan.io/account/{wallet}">Wallet Solscan</a>')
+            links.append(f'<a href="https://magiceden.io/u/{wallet}">Wallet ME</a>')
+        token_mint = a.get("tokenMint")
+        if token_mint:
+            links.append(f'<a href="https://magiceden.io/item-details/{token_mint}">NFT</a>')
+        links_txt = f"\n{' · '.join(links)}" if links else ""
+
+        new_alerts.append(f"{icon} <b>{label}</b> — {title}\n{price_sol:.3f} SOL{spread_txt}{usdc_txt}{links_txt}")
 
     # Purge les entrées trop anciennes pour ne pas laisser grossir la liste indéfiniment
     cutoff_epoch = time.time() - MARKET_ALERT_DEDUP_WINDOW_SECONDS
     entry["recent_alert_keys"] = [rk for rk in recent_keys if _epoch(rk["ts"]) >= cutoff_epoch]
 
     entry["last_market_alert_ts"] = newest_ts
+    return new_alerts
     return new_alerts
 
 
@@ -444,11 +461,6 @@ def main():
 
         try:
             activities = fetch_activities_page(symbol, 0, limit=50)
-            if "raw_activity_debug_list" not in data:
-                for a in activities:
-                    if a.get("type") == "list":
-                        data["raw_activity_debug_list"] = a
-                        break
         except Exception as e:
             print(f"[warn] activities {symbol}: {e}")
             activities = []

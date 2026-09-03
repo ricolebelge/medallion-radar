@@ -280,6 +280,29 @@ def fetch_activities_page(symbol, offset, limit=SYNC_PAGE_LIMIT):
     return fetch_json(url)
 
 
+def fetch_activities_covering(symbol, max_pages=10, page_size=50):
+    """
+    Pagine sur /activities jusqu'à max_pages (soit ~500 items par défaut).
+    Note : l'API plafonne en pratique à ~50 items par appel quel que soit
+    `limit` demandé, malgré une doc annonçant jusqu'à 1000 — d'où la
+    pagination manuelle. Vu le bruit des pools de market-making (bid/
+    poolUpdate très fréquents), même 500 items ne couvre pas toujours 24h
+    complètes : le compteur de ventes qui en dérive est donc calculé sur la
+    fenêtre réellement couverte puis extrapolé sur 24h (voir sales_24h_est).
+    """
+    all_activities = []
+    offset = 0
+    for _ in range(max_pages):
+        page = fetch_activities_page(symbol, offset, limit=page_size)
+        if not page:
+            break
+        all_activities.extend(page)
+        if len(page) < page_size:
+            break
+        offset += page_size
+    return all_activities
+
+
 def sync_all_time_extremes(symbol, start_offset=0, prev_atl_sol=None, prev_atl_ts=None,
                             prev_ath_sol=None, prev_ath_ts=None):
     """
@@ -440,7 +463,6 @@ def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
 
     entry["last_market_alert_ts"] = newest_ts
     return new_alerts
-    return new_alerts
 
 
 def main():
@@ -462,26 +484,26 @@ def main():
         avg_price_24h = normalize_price_to_sol(stats.get("avgPrice24hr"))
 
         try:
-            activities = fetch_activities_page(symbol, 0, limit=1000)
-            if activities:
-                oldest_epoch = min((extract_ts_epoch(a) or time.time()) for a in activities)
-                coverage_hours = (time.time() - oldest_epoch) / 3600
-                type_counts = {}
-                for a in activities:
-                    t = a.get("type")
-                    type_counts[t] = type_counts.get(t, 0) + 1
-                data.setdefault("coverage_debug", {})[symbol] = {
-                    "coverage_hours": round(coverage_hours, 2),
-                    "type_counts": type_counts,
-                }
+            activities = fetch_activities_covering(symbol, max_pages=10, page_size=50)
         except Exception as e:
             print(f"[warn] activities {symbol}: {e}")
             activities = []
 
-        cutoff = time.time() - 86400
-        sales_24h = sum(
-            1 for a in activities
-            if a.get("type") in ("buyNow", "acceptBid") and (extract_ts_epoch(a) or 0) >= cutoff
+        if activities:
+            oldest_epoch = min((extract_ts_epoch(a) or time.time()) for a in activities)
+            coverage_hours = max((time.time() - oldest_epoch) / 3600, 0.01)
+        else:
+            coverage_hours = None
+
+        sales_in_window = sum(
+            1 for a in activities if a.get("type") in ("buyNow", "acceptBid")
+        )
+        # Extrapolation sur 24h à partir de la fenêtre réellement couverte
+        # (souvent < 24h à cause du bruit des pools MM) — indicateur de tendance,
+        # pas un comptage exact.
+        sales_24h = (
+            round(sales_in_window / coverage_hours * 24)
+            if coverage_hours else 0
         )
 
         entry = data["collections"].setdefault(symbol, {"label": label, "history": [], "last_signal": None})
@@ -558,6 +580,7 @@ def main():
             "avg_price_24h_sol": avg_price_24h,
             "sales_24h": sales_24h,
             "liquidity_ratio_pct": liquidity_ratio_pct,
+            "sales_coverage_hours": round(coverage_hours, 1) if coverage_hours else None,
             "holders": holders,
             "signal": signal,
             "signal_reason": reason,

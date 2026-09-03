@@ -37,6 +37,7 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 FLOOR_MOVE_ALERT_THRESHOLD = 0.08
 LISTING_PRESSURE_THRESHOLD = 0.15
+HEARTBEAT_INTERVAL_SECONDS = 30 * 60  # 30 min
 
 TX_TYPE_LABELS_FR = {
     "buyNow": "Vente",
@@ -581,6 +582,21 @@ def main():
         send_telegram("\n\n".join(alerts))
     else:
         print("[info] aucune alerte à envoyer cette fois-ci.")
+
+    # --- Heartbeat : confirme que le collecteur tourne, même sans alerte ---
+    last_hb = data.get("last_heartbeat_ts")
+    hb_due = last_hb is None or (
+        datetime.now(timezone.utc) - datetime.fromisoformat(last_hb)
+    ).total_seconds() >= HEARTBEAT_INTERVAL_SECONDS
+    if hb_due:
+        lines = ["🫀 <b>Heartbeat</b> — collecteur actif"]
+        for symbol, label in COLLECTIONS.items():
+            floor = data["collections"].get(symbol, {}).get("current", {}).get("floor_sol")
+            floor_txt = f"{floor:.3f} SOL" if floor is not None else "N/A"
+            lines.append(f"{label} : {floor_txt}")
+        send_telegram("\n".join(lines))
+        data["last_heartbeat_ts"] = now_iso
+        save_data(data)
 
 
 if __name__ == "__main__":

@@ -327,6 +327,7 @@ def sync_all_time_extremes(symbol, start_offset=0, prev_atl_sol=None, prev_atl_t
     pages = 0
     started = time.monotonic()
     complete = False
+    last_error = None
     while pages < MAX_SYNC_PAGES:
         if time.monotonic() - started > SYNC_TIME_BUDGET_SECONDS:
             print(f"[info] sync {symbol}: budget temps atteint après {pages} page(s), reprise à offset={offset}")
@@ -335,6 +336,7 @@ def sync_all_time_extremes(symbol, start_offset=0, prev_atl_sol=None, prev_atl_t
             batch = fetch_activities_page(symbol, offset)
         except Exception as e:
             print(f"[warn] sync ATH/ATL {symbol} offset={offset}: {e}")
+            last_error = str(e)
             break
         if not batch:
             complete = True
@@ -367,6 +369,7 @@ def sync_all_time_extremes(symbol, start_offset=0, prev_atl_sol=None, prev_atl_t
         "synced_back_to": oldest_ts,
         "history_complete": complete,
         "next_offset": offset,
+        "last_error": last_error,
     }
 
 
@@ -552,6 +555,7 @@ def main():
                     "offset_before": entry.get("sync_offset", 0),
                     "offset_after": extremes["next_offset"],
                     "complete": extremes["history_complete"],
+                    "last_error": extremes.get("last_error"),
                 }
             except Exception as e:
                 print(f"[warn] sync ATH/ATL {symbol}: {e}")

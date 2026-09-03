@@ -351,8 +351,8 @@ def build_recent_tx(activities):
     return tx_list
 
 
-MARKET_ALERT_ICONS = {"list": "📋", "buyNow": "💰"}
-MARKET_ALERT_TITLES = {"list": "Nouvelle offre vendeur", "buyNow": "Achat réalisé"}
+MARKET_ALERT_ICONS = {"list": "📋", "buyNow": "💰", "acceptBid": "🤝"}
+MARKET_ALERT_TITLES = {"list": "Nouvelle offre vendeur", "buyNow": "Achat réalisé", "acceptBid": "Offre acceptée (vente privée)"}
 
 
 MARKET_ALERT_DEDUP_WINDOW_SECONDS = 2 * 60 * 60  # 2h : ignore les re-listings/ajustements répétés (pools MM)
@@ -422,7 +422,7 @@ def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
         usdc_txt = f"\n≈ {price_sol * sol_usdc:,.0f} USDC".replace(",", " ") if sol_usdc else ""
 
         # Wallet pertinent : le vendeur pour une mise en vente, l'acheteur pour un achat
-        wallet = a.get("buyer") if tx_type == "buyNow" else a.get("seller")
+        wallet = a.get("seller") if tx_type == "list" else a.get("buyer")
         links = []
         if wallet:
             links.append(f'<a href="https://solscan.io/account/{wallet}">Wallet Solscan</a>')

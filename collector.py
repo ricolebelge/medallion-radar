@@ -530,6 +530,15 @@ def main():
 
         holders = fetch_holder_count(symbol)
 
+        # Ratio de liquidité : part du listing actuel qui a tourné en 24h.
+        # Ex: 20 ventes / 100 listés = 20% -> marché liquide.
+        # Rappel : sales_24h est approximatif (dérivé des 50 dernières activités,
+        # peut sous-compter sur une collection très active où >50 tx/24h ont lieu).
+        liquidity_ratio_pct = (
+            round(sales_24h / listed_count * 100, 1)
+            if listed_count else None
+        )
+
         entry["current"] = {
             "floor_sol": floor_sol,
             "floor_eur": round(floor_sol * sol_eur, 2) if floor_sol and sol_eur else None,
@@ -537,6 +546,7 @@ def main():
             "listed": listed_count,
             "avg_price_24h_sol": avg_price_24h,
             "sales_24h": sales_24h,
+            "liquidity_ratio_pct": liquidity_ratio_pct,
             "holders": holders,
             "signal": signal,
             "signal_reason": reason,
@@ -592,9 +602,12 @@ def main():
     if hb_due:
         lines = ["🫀 <b>Heartbeat</b> — collecteur actif"]
         for symbol, label in COLLECTIONS.items():
-            floor = data["collections"].get(symbol, {}).get("current", {}).get("floor_sol")
+            current = data["collections"].get(symbol, {}).get("current", {})
+            floor = current.get("floor_sol")
+            liq = current.get("liquidity_ratio_pct")
             floor_txt = f"{floor:.3f} SOL" if floor is not None else "N/A"
-            lines.append(f"{label} : {floor_txt}")
+            liq_txt = f" · liquidité {liq:.1f}%/24h" if liq is not None else ""
+            lines.append(f"{label} : {floor_txt}{liq_txt}")
         send_telegram("\n".join(lines))
         data["last_heartbeat_ts"] = now_iso
         save_data(data)

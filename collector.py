@@ -354,11 +354,17 @@ MARKET_ALERT_ICONS = {"list": "📋", "buyNow": "💰"}
 MARKET_ALERT_TITLES = {"list": "Nouvelle offre vendeur", "buyNow": "Achat réalisé"}
 
 
+MARKET_ALERT_DEDUP_WINDOW_SECONDS = 30 * 60  # 30 min : ignore les re-listings identiques (pools MM)
+
+
 def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
     """
     Alerte Telegram pour chaque nouvelle offre vendeur (list) et achat
     réalisé (buyNow), avec écart vs floor et prix en SOL/USDC.
-    Dédoublonnage via le timestamp de la dernière activité déjà notifiée.
+    Dédoublonnage :
+      1) par timestamp (ne revoit pas ce qui a déjà été scanné)
+      2) par (type, prix arrondi) sur une fenêtre de 30 min, pour ignorer
+         les re-listings répétés au même prix par les pools de market-making
     """
     last_ts = entry.get("last_market_alert_ts")
     relevant = []
@@ -378,12 +384,28 @@ def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
             entry["last_market_alert_ts"] = relevant[-1][0]
         return []
 
+    recent_keys = entry.get("recent_alert_keys", [])  # [{"key": "...", "ts": iso}, ...]
+
+    def _epoch(ts_iso_str):
+        return datetime.fromisoformat(ts_iso_str).timestamp()
+
     new_alerts = []
     newest_ts = last_ts
     for ts_iso, tx_type, price_sol in relevant:
         if ts_iso <= last_ts:
             continue
         newest_ts = max(newest_ts, ts_iso)
+
+        dedup_key = f"{tx_type}:{price_sol:.3f}"
+        now_epoch = _epoch(ts_iso)
+        is_duplicate = any(
+            rk["key"] == dedup_key and (now_epoch - _epoch(rk["ts"])) < MARKET_ALERT_DEDUP_WINDOW_SECONDS
+            for rk in recent_keys
+        )
+        recent_keys.append({"key": dedup_key, "ts": ts_iso})
+        if is_duplicate:
+            continue
+
         icon = MARKET_ALERT_ICONS[tx_type]
         title = MARKET_ALERT_TITLES[tx_type]
         spread_txt = ""
@@ -393,6 +415,10 @@ def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
             spread_txt = f" ({sign}{spread_pct:.1f}% vs floor {floor_sol:.3f})"
         usdc_txt = f"\n≈ {price_sol * sol_usdc:,.0f} USDC".replace(",", " ") if sol_usdc else ""
         new_alerts.append(f"{icon} <b>{label}</b> — {title}\n{price_sol:.3f} SOL{spread_txt}{usdc_txt}")
+
+    # Purge les entrées trop anciennes pour ne pas laisser grossir la liste indéfiniment
+    cutoff_epoch = time.time() - MARKET_ALERT_DEDUP_WINDOW_SECONDS
+    entry["recent_alert_keys"] = [rk for rk in recent_keys if _epoch(rk["ts"]) >= cutoff_epoch]
 
     entry["last_market_alert_ts"] = newest_ts
     return new_alerts

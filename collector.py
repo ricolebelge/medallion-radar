@@ -539,12 +539,6 @@ def main():
     else:
         print("[info] aucune alerte à envoyer cette fois-ci.")
 
-    # --- TEST TEMPORAIRE : à retirer après confirmation ---
-    send_telegram("✅ Test pipeline collecteur → Telegram : ça fonctionne.")
-    data["telegram_debug"] = TELEGRAM_DEBUG
-    save_data(data)
-    # --- FIN TEST TEMPORAIRE ---
-
 
 if __name__ == "__main__":
     main()

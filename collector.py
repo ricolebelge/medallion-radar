@@ -462,7 +462,7 @@ def main():
         avg_price_24h = normalize_price_to_sol(stats.get("avgPrice24hr"))
 
         try:
-            activities = fetch_activities_page(symbol, 0, limit=50)
+            activities = fetch_activities_page(symbol, 0, limit=1000)
             if activities:
                 oldest_epoch = min((extract_ts_epoch(a) or time.time()) for a in activities)
                 coverage_hours = (time.time() - oldest_epoch) / 3600

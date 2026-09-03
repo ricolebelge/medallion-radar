@@ -110,9 +110,15 @@ def normalize_price_to_sol(raw):
     return raw / 1e9 if raw > 1000 else raw
 
 
+TELEGRAM_DEBUG = {}
+
+
 def send_telegram(text):
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
         print("[info] Telegram non configuré, alerte non envoyée:\n" + text)
+        TELEGRAM_DEBUG["status"] = "not_configured"
+        TELEGRAM_DEBUG["token_present"] = bool(TELEGRAM_TOKEN)
+        TELEGRAM_DEBUG["chat_id_present"] = bool(TELEGRAM_CHAT_ID)
         return
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = json.dumps({
@@ -123,9 +129,13 @@ def send_telegram(text):
     }).encode()
     req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
     try:
-        urllib.request.urlopen(req, timeout=15)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            TELEGRAM_DEBUG["status"] = "ok"
+            TELEGRAM_DEBUG["http_code"] = resp.status
     except Exception as e:
         print(f"[warn] échec envoi Telegram: {e}")
+        TELEGRAM_DEBUG["status"] = "error"
+        TELEGRAM_DEBUG["error"] = str(e)
 
 
 def load_data():
@@ -531,6 +541,8 @@ def main():
 
     # --- TEST TEMPORAIRE : à retirer après confirmation ---
     send_telegram("✅ Test pipeline collecteur → Telegram : ça fonctionne.")
+    data["telegram_debug"] = TELEGRAM_DEBUG
+    save_data(data)
     # --- FIN TEST TEMPORAIRE ---
 
 

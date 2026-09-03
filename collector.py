@@ -355,7 +355,7 @@ MARKET_ALERT_ICONS = {"list": "📋", "buyNow": "💰"}
 MARKET_ALERT_TITLES = {"list": "Nouvelle offre vendeur", "buyNow": "Achat réalisé"}
 
 
-MARKET_ALERT_DEDUP_WINDOW_SECONDS = 30 * 60  # 30 min : ignore les re-listings identiques (pools MM)
+MARKET_ALERT_DEDUP_WINDOW_SECONDS = 2 * 60 * 60  # 2h : ignore les re-listings/ajustements répétés (pools MM)
 
 
 def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
@@ -365,8 +365,9 @@ def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
     cliquables vers le wallet (Solscan + Magic Eden) et la NFT concernée.
     Dédoublonnage :
       1) par timestamp (ne revoit pas ce qui a déjà été scanné)
-      2) par (type, prix arrondi) sur une fenêtre de 30 min, pour ignorer
-         les re-listings répétés au même prix par les pools de market-making
+      2) par (type, tokenMint) sur une fenêtre de 2h, pour ignorer les
+         re-listings/ajustements de prix répétés sur la même NFT par les
+         pools de market-making (ex: baisse de prix par petits paliers)
     """
     last_ts = entry.get("last_market_alert_ts")
     relevant = []
@@ -401,7 +402,7 @@ def build_market_alerts(entry, activities, label, floor_sol, sol_usdc):
         tx_type = a.get("type")
         price_sol = normalize_price_to_sol(a.get("price"))
 
-        dedup_key = f"{tx_type}:{price_sol:.3f}"
+        dedup_key = f"{tx_type}:{a.get('tokenMint') or f'price:{price_sol:.3f}'}"
         now_epoch = _epoch(ts_iso)
         is_duplicate = any(
             rk["key"] == dedup_key and (now_epoch - _epoch(rk["ts"])) < MARKET_ALERT_DEDUP_WINDOW_SECONDS

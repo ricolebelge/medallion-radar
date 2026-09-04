@@ -674,7 +674,7 @@ def main():
             floor = current.get("floor_sol")
             liq = current.get("liquidity_ratio_pct")
             floor_txt = f"{floor:.3f} SOL" if floor is not None else "N/A"
-            liq_txt = f" · liquidité {liq:.1f}%/24h" if liq is not None else ""
+            liq_txt = f" · liquidité {liq:.1f}% (24h)" if liq is not None else ""
             lines.append(f"{label} : {floor_txt}{liq_txt}")
         send_telegram("\n".join(lines))
         data["last_heartbeat_ts"] = now_iso

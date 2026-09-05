@@ -96,6 +96,18 @@
   }
   .currency-toggle button + button{border-left:1px solid var(--hairline);}
   .currency-toggle button.active{background:var(--gold);color:#FFF9EE;}
+  .telegram-link{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.02em;
+    color:var(--gold);
+    text-decoration:none;
+    border:1px solid var(--hairline);
+    border-radius:8px;
+    padding:7px 14px;
+    white-space:nowrap;
+  }
+  .telegram-link:hover{background:var(--surface-2);}
 
   .grid{
     display:grid;
@@ -289,10 +301,13 @@
       <p class="sub">Floor price, ATH/ATL and buy/sell signals for the official Tomorrowland medallions, calculated from real transactions on Magic Eden.</p>
       <div class="toolbar">
         <div class="ticker" id="ticker">Loading…</div>
-        <div class="currency-toggle" id="currencyToggle">
-          <button data-currency="SOL" class="active">SOL</button>
-          <button data-currency="EUR">EUR</button>
-          <button data-currency="USDC">USDC</button>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <a href="https://t.me/+WFYTd8LKB0AxZTQ8" target="_blank" rel="noopener" class="telegram-link">Join Telegram alerts</a>
+          <div class="currency-toggle" id="currencyToggle">
+            <button data-currency="SOL" class="active">SOL</button>
+            <button data-currency="EUR">EUR</button>
+            <button data-currency="USDC">USDC</button>
+          </div>
         </div>
       </div>
     </header>

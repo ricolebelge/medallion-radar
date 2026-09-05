@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -284,11 +284,11 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="eyebrow">Suivi non-officiel &middot; groupe privé</div>
+      <div class="eyebrow">Unofficial tracker &middot; private group</div>
       <h1>TML NFT Watch</h1>
-      <p class="sub">Floor price, ATH/ATL et signaux d'achat/vente sur les medallions officiels Tomorrowland, calculés à partir des transactions réelles sur Magic Eden.</p>
+      <p class="sub">Floor price, ATH/ATL and buy/sell signals for the official Tomorrowland medallions, calculated from real transactions on Magic Eden.</p>
       <div class="toolbar">
-        <div class="ticker" id="ticker">Chargement…</div>
+        <div class="ticker" id="ticker">Loading…</div>
         <div class="currency-toggle" id="currencyToggle">
           <button data-currency="SOL" class="active">SOL</button>
           <button data-currency="EUR">EUR</button>
@@ -298,19 +298,19 @@
     </header>
 
     <div class="grid" id="grid">
-      <div class="empty">Chargement des données…</div>
+      <div class="empty">Loading data…</div>
     </div>
 
     <section class="compare-section">
-      <h2>Comparaison des 3 séries</h2>
-      <p class="compare-sub">Variation en % depuis le début de l'historique affiché — permet de voir quelle série sur-performe les autres.</p>
+      <h2>Comparing the 3 series</h2>
+      <p class="compare-sub">% change since the start of the displayed history — shows which series is outperforming the others.</p>
       <div id="compareChart"></div>
     </section>
 
     <footer>
-      * Le total de porteurs est une somme des 3 séries, <strong>non dédupliquée</strong> — un wallet possédant des NFT dans plusieurs séries est compté plusieurs fois. Magic Eden ne fournit pas la liste des wallets, seulement un décompte par collection, donc un vrai chiffre unique across-séries demanderait un scan on-chain complet (hors périmètre actuel).<br>
-      Ces signaux sont des indicateurs heuristiques (moyennes mobiles, volume, pression de l'offre) construits à partir de l'historique collecté — ce n'est pas un conseil financier. ATH/ATL calculés depuis l'historique complet des ventes on-chain de chaque collection. Le marché des NFT est peu liquide et peut bouger fortement sur peu de transactions.<br>
-      Données : <a href="https://magiceden.io" target="_blank" rel="noopener">Magic Eden</a> · Taux : <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a>
+      * Total holders is a sum across the 3 series, <strong>not deduplicated</strong> — a wallet holding NFTs across several series is counted more than once. Magic Eden doesn't provide a wallet list, only a per-collection count, so a true unique cross-series figure would require a full on-chain scan (out of current scope).<br>
+      These signals are heuristic indicators (moving averages, volume, listing pressure) built from the collected history — this is not financial advice. ATH/ATL are calculated from the on-chain sales history available for each collection (may be partial, see note on each card). The NFT market has thin liquidity and can move sharply on few transactions.<br>
+      Data: <a href="https://magiceden.io" target="_blank" rel="noopener">Magic Eden</a> · Rates: <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a>
     </footer>
   </div>
 
@@ -343,15 +343,15 @@ function timeAgo(iso){
   if(!iso) return "—";
   const diffMs = Date.now() - new Date(iso).getTime();
   const min = Math.round(diffMs/60000);
-  if(min < 1) return "à l'instant";
-  if(min < 60) return `il y a ${min} min`;
+  if(min < 1) return "just now";
+  if(min < 60) return `${min} min ago`;
   const h = Math.round(min/60);
-  if(h < 24) return `il y a ${h} h`;
+  if(h < 24) return `${h}h ago`;
   const d = Math.round(h/24);
-  if(d < 30) return `il y a ${d} j`;
+  if(d < 30) return `${d}d ago`;
   const m = Math.round(d/30);
-  if(m < 24) return `il y a ${m} mois`;
-  return `il y a ${Math.round(m/12)} an(s)`;
+  if(m < 24) return `${m}mo ago`;
+  return `${Math.round(m/12)}y ago`;
 }
 
 function fmtPrice(sol){
@@ -414,7 +414,7 @@ function comparisonChart(entries){
     .filter(s => s.points.length >= 2);
 
   if(series.length === 0){
-    return `<div class="empty">Pas encore assez d'historique pour comparer les séries.</div>`;
+    return `<div class="empty">Not enough history yet to compare the series.</div>`;
   }
 
   const windowSize = Math.min(...series.map(s => s.points.length), 3000);
@@ -463,56 +463,58 @@ function renderAll(){
   ticker.innerHTML = `
     <span>SOL/EUR <b>${data.sol_eur ? data.sol_eur.toFixed(2) + " €" : "—"}</b></span>
     <span>SOL/USDC <b>${data.sol_usdc ? data.sol_usdc.toFixed(2) : "—"}</b></span>
-    <span>Porteurs (somme, non dédupliquée*) <b>${data.total_holders_naive ?? "—"}</b></span>
-    <span>Dernière mise à jour <b>${timeAgo(data.last_update)}</b></span>
-    <span>${Object.keys(data.collections || {}).length} collection(s) suivies</span>
+    <span>Holders (sum, not deduplicated*) <b>${data.total_holders_naive ?? "—"}</b></span>
+    <span>Last update <b>${timeAgo(data.last_update)}</b></span>
+    <span>${Object.keys(data.collections || {}).length} collection(s) tracked</span>
   `;
 
   const entries = Object.values(data.collections || {});
   if(entries.length === 0){
-    grid.innerHTML = `<div class="empty">Aucune donnée pour le moment — le premier passage du collecteur n'a pas encore tourné.</div>`;
+    grid.innerHTML = `<div class="empty">No data yet — the collector hasn't run for the first time.</div>`;
     return;
   }
 
   grid.innerHTML = entries.map(entry => {
     const c = entry.current || {};
     const ring = RING[c.signal] || "var(--watch)";
-    const tx = (entry.recent_tx || []).map(txRow).join("") || `<div class="tx-row"><span class="tx-type">Aucune tx récente</span></div>`;
+    const tx = (entry.recent_tx || []).map(txRow).join("") || `<div class="tx-row"><span class="tx-type">No recent tx</span></div>`;
     return `
       <div class="card" style="--ring-color:${ring}">
         <div class="medallion">${initials(entry.label)}</div>
         <div class="name">${entry.label}</div>
         <div class="price-main">${fmtPrice(c.floor_sol)}</div>
-        <div class="price-sub">Floor actuel</div>
+        <div class="price-sub">Current floor</div>
         <div class="badge">${c.signal || "—"}</div>
         <div class="reason">${c.signal_reason || ""}</div>
         <div class="pct-row">
-          <span>7j: <span class="${pctClass(c.pct_7d)}">${fmtPct(c.pct_7d)}</span></span>
-          <span>30j: <span class="${pctClass(c.pct_30d)}">${fmtPct(c.pct_30d)}</span></span>
+          <span>7d: <span class="${pctClass(c.pct_7d)}">${fmtPct(c.pct_7d)}</span></span>
+          <span>30d: <span class="${pctClass(c.pct_30d)}">${fmtPct(c.pct_30d)}</span></span>
         </div>
         ${sparkline(entry.history || [])}
         <div class="extremes">
           <div class="extreme atl">
-            <div class="lbl">Plus bas</div>
+            <div class="lbl">All-time low</div>
             <div class="val">${fmtPrice(entry.atl_sol)}</div>
             <div class="date">${timeAgo(entry.atl_ts)}</div>
           </div>
           <div class="extreme ath">
-            <div class="lbl">Plus haut</div>
+            <div class="lbl">All-time high</div>
             <div class="val">${fmtPrice(entry.ath_sol)}</div>
             <div class="date">${timeAgo(entry.ath_ts)}</div>
           </div>
         </div>
         <div class="sync-note">${entry.history_complete
-          ? `Historique complet depuis le contrat (remonte à ${timeAgo(entry.synced_back_to)})`
-          : `Scan de l'historique en cours… remonte pour l'instant à ${timeAgo(entry.synced_back_to)}`}</div>
+          ? `Full history scanned from the contract (back to ${timeAgo(entry.synced_back_to)})`
+          : entry.history_capped_by_api
+          ? `Partial history only — Magic Eden's API blocks deeper pagination (covers back to ${timeAgo(entry.synced_back_to)})`
+          : `History scan in progress… covers back to ${timeAgo(entry.synced_back_to)} so far`}</div>
         <div class="meta">
-          <span>${c.listed ?? "—"} listés</span>
-          <span>${c.holders ?? "—"} porteurs</span>
-          <span>${c.sales_24h ?? 0} vente(s)/24h</span>
+          <span>${c.listed ?? "—"} listed</span>
+          <span>${c.holders ?? "—"} holders</span>
+          <span>${c.sales_24h ?? 0} sale(s)/24h</span>
         </div>
         <div class="tx-list">
-          <div class="lbl">Dernières transactions</div>
+          <div class="lbl">Recent transactions</div>
           ${tx}
         </div>
       </div>
@@ -527,12 +529,12 @@ async function load(){
   const ticker = document.getElementById("ticker");
   try{
     const res = await fetch("./data.json?_=" + Date.now());
-    if(!res.ok) throw new Error("data.json introuvable");
+    if(!res.ok) throw new Error("data.json not found");
     latestData = await res.json();
     renderAll();
   }catch(err){
     console.error(err);
-    grid.innerHTML = `<div class="empty">Impossible de charger data.json — vérifie que le collecteur a tourné au moins une fois.</div>`;
+    grid.innerHTML = `<div class="empty">Couldn't load data.json — check that the collector has run at least once.</div>`;
     ticker.textContent = "—";
   }
 }

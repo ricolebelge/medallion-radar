@@ -40,13 +40,13 @@ FLOOR_MOVE_ALERT_THRESHOLD = 0.08
 LISTING_PRESSURE_THRESHOLD = 0.15
 HEARTBEAT_INTERVAL_SECONDS = 2 * 60 * 60  # 2h
 
-TX_TYPE_LABELS_FR = {
-    "buyNow": "Vente",
-    "list": "Mise en vente",
-    "delist": "Retrait",
-    "bid": "Offre",
-    "cancelBid": "Offre annulée",
-    "acceptBid": "Offre acceptée",
+TX_TYPE_LABELS_EN = {
+    "buyNow": "Sale",
+    "list": "Listed",
+    "delist": "Delisted",
+    "bid": "Offer",
+    "cancelBid": "Offer cancelled",
+    "acceptBid": "Offer accepted",
 }
 
 
@@ -391,7 +391,7 @@ def build_recent_tx(activities):
     for a in activities[:RECENT_TX_COUNT]:
         tx_list.append({
             "type": a.get("type"),
-            "type_label": TX_TYPE_LABELS_FR.get(a.get("type"), a.get("type") or "—"),
+            "type_label": TX_TYPE_LABELS_EN.get(a.get("type"), a.get("type") or "—"),
             "price_sol": normalize_price_to_sol(a.get("price")),
             "ts": extract_ts_iso(a),
         })

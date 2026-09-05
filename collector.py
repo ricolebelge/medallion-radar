@@ -186,19 +186,19 @@ def pct_change_over(history, days):
 
 def compute_signal(history, listed_now, listed_prev, sales_24h, floor_sol, ath_sol, atl_sol, history_complete=False):
     """
-    Combine tendance (moyennes mobiles), pression de l'offre, activité
-    récente, et position par rapport au plus bas/plus haut historique —
-    pour donner une indication explicite d'achat ou de vente.
+    Combines trend (moving averages), listing pressure, recent activity,
+    and position relative to the all-time low/high — to produce an
+    explicit buy/sell indication.
 
-    Tant que le scan ATH/ATL n'est pas terminé (history_complete=False),
-    l'ATH/ATL connu n'est qu'une borne partielle (le vrai extrême peut être
-    plus loin, pas encore scanné) : son poids dans le score est réduit de
-    moitié et la raison affichée le précise, pour éviter un signal PRUDENCE/
-    VENDRE prématuré basé sur un plus haut sous-estimé.
+    While the ATH/ATL scan isn't finished (history_complete=False), the
+    known ATH/ATL is only a partial bound (the true extreme may lie further
+    back, not yet scanned): its weight in the score is halved and the
+    displayed reason flags it, to avoid a premature PRUDENCE/SELL signal
+    based on an underestimated high.
     """
     floors = [h["floor_sol"] for h in history if h.get("floor_sol")]
     if len(floors) < 5:
-        return "COLLECTE EN COURS", "Pas encore assez d'historique pour un signal fiable."
+        return "COLLECTING DATA", "Not enough history yet for a reliable signal."
 
     ma7 = moving_average(floors[-7:])
     ma30 = moving_average(floors[-30:])
@@ -208,47 +208,47 @@ def compute_signal(history, listed_now, listed_prev, sales_24h, floor_sol, ath_s
     if ma7 is not None and ma30 is not None:
         if ma7 > ma30 * 1.02:
             score += 1
-            reasons.append("tendance courte haussière")
+            reasons.append("short-term uptrend")
         elif ma7 < ma30 * 0.98:
             score -= 1
-            reasons.append("tendance courte baissière")
+            reasons.append("short-term downtrend")
 
     if sales_24h:
         score += 0.5
-        reasons.append(f"{sales_24h} vente(s) sur 24h")
+        reasons.append(f"{sales_24h} sale(s) in 24h")
 
     if listed_prev:
         pressure = (listed_now - listed_prev) / listed_prev
         if pressure > LISTING_PRESSURE_THRESHOLD:
             score -= 1
-            reasons.append("hausse des annonces en vente (pression vendeuse)")
+            reasons.append("rise in listings (selling pressure)")
         elif pressure < -LISTING_PRESSURE_THRESHOLD:
             score += 0.5
-            reasons.append("baisse des annonces en vente (rétention)")
+            reasons.append("drop in listings (holding)")
 
-    # --- Position relative dans la fourchette ATH-ATL --------------------
-    # (plutôt que deux seuils indépendants qui peuvent se déclencher
-    # ensemble et se contredire quand l'écart ATH-ATL est faible)
+    # --- Relative position within the ATH-ATL range -----------------------
+    # (rather than two independent thresholds that could both fire and
+    # contradict each other when the ATH-ATL gap is small)
     if floor_sol and ath_sol and atl_sol and ath_sol > atl_sol:
         position = (floor_sol - atl_sol) / (ath_sol - atl_sol)  # 0=ATL, 1=ATH
         weight = 1.0 if history_complete else 0.5
-        partial_tag = "" if history_complete else " (ATH/ATL partiel, fiabilité réduite)"
+        partial_tag = "" if history_complete else " (partial ATH/ATL, reduced reliability)"
         if position <= 0.15:
             score += weight
-            reasons.append(f"proche du plus bas historique{partial_tag}")
+            reasons.append(f"near all-time low{partial_tag}")
         elif position >= 0.85:
             score -= weight
-            reasons.append(f"proche du plus haut historique{partial_tag}")
+            reasons.append(f"near all-time high{partial_tag}")
 
     if score >= 2:
-        return "ACHAT FORT", ", ".join(reasons)
+        return "STRONG BUY", ", ".join(reasons)
     if score >= 1:
-        return "SIGNAL ACHAT", ", ".join(reasons)
+        return "BUY SIGNAL", ", ".join(reasons)
     if score <= -2:
-        return "VENDRE", ", ".join(reasons)
+        return "SELL", ", ".join(reasons)
     if score <= -1:
-        return "PRUDENCE", ", ".join(reasons)
-    return "SURVEILLER", ", ".join(reasons) if reasons else "Pas de mouvement net."
+        return "CAUTION", ", ".join(reasons)
+    return "WATCH", ", ".join(reasons) if reasons else "No clear movement."
 
 
 def fetch_holder_count(symbol):
@@ -399,7 +399,7 @@ def build_recent_tx(activities):
 
 
 MARKET_ALERT_ICONS = {"list": "📋", "buyNow": "💰", "acceptBid": "🤝"}
-MARKET_ALERT_TITLES = {"list": "Nouvelle offre vendeur", "buyNow": "Achat réalisé", "acceptBid": "Offre acceptée (vente privée)"}
+MARKET_ALERT_TITLES = {"list": "New listing", "buyNow": "Purchase", "acceptBid": "Offer accepted (private sale)"}
 
 
 MARKET_ALERT_DEDUP_WINDOW_SECONDS = 2 * 60 * 60  # 2h : ignore les re-listings/ajustements répétés (pools MM)
@@ -624,15 +624,15 @@ def main():
         }
 
         if prev_floor and floor_sol and abs(floor_sol - prev_floor) / prev_floor >= FLOOR_MOVE_ALERT_THRESHOLD:
-            direction = "monté 📈" if floor_sol > prev_floor else "chuté 📉"
+            direction = "up 📈" if floor_sol > prev_floor else "down 📉"
             pct = abs(floor_sol - prev_floor) / prev_floor * 100
             alerts.append(
-                f"🔔 <b>{label}</b>\nFloor {direction} de {pct:.1f}% : "
+                f"🔔 <b>{label}</b>\nFloor {direction} {pct:.1f}%: "
                 f"{prev_floor:.3f} → {floor_sol:.3f} SOL"
             )
 
         if entry.get("last_signal") not in (None, signal):
-            alerts.append(f"⚡ <b>{label}</b>\nNouveau signal : <b>{signal}</b>\n{reason}")
+            alerts.append(f"⚡ <b>{label}</b>\nNew signal: <b>{signal}</b>\n{reason}")
         entry["last_signal"] = signal
 
         time.sleep(0.2)
@@ -668,14 +668,14 @@ def main():
         datetime.now(timezone.utc) - datetime.fromisoformat(last_hb)
     ).total_seconds() >= HEARTBEAT_INTERVAL_SECONDS
     if hb_due:
-        lines = ["🫀 <b>Heartbeat</b> — collecteur actif"]
+        lines = ["🫀 <b>Heartbeat</b> — collector active"]
         for symbol, label in COLLECTIONS.items():
             current = data["collections"].get(symbol, {}).get("current", {})
             floor = current.get("floor_sol")
             liq = current.get("liquidity_ratio_pct")
             floor_txt = f"{floor:.3f} SOL" if floor is not None else "N/A"
-            liq_txt = f" · liquidité {liq:.1f}% (24h)" if liq is not None else ""
-            lines.append(f"{label} : {floor_txt}{liq_txt}")
+            liq_txt = f" · liquidity {liq:.1f}% (24h)" if liq is not None else ""
+            lines.append(f"{label}: {floor_txt}{liq_txt}")
         send_telegram("\n".join(lines))
         data["last_heartbeat_ts"] = now_iso
         save_data(data)

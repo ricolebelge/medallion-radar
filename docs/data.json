@@ -10064,13 +10064,19 @@
           "floor_sol": 49.099,
           "listed": 25,
           "sales_24h": 0
+        },
+        {
+          "ts": "2026-09-10T17:00:45.824075+00:00",
+          "floor_sol": 49.099,
+          "listed": 25,
+          "sales_24h": 0
         }
       ],
       "last_signal": "WATCH",
       "current": {
         "floor_sol": 49.099,
-        "floor_eur": 4194.53,
-        "floor_usdc": 4874.06,
+        "floor_eur": 4208.28,
+        "floor_usdc": 4890.75,
         "listed": 25,
         "avg_price_24h_sol": 48.4665,
         "sales_24h": 0,
@@ -10081,7 +10087,7 @@
         "signal_reason": "No clear movement.",
         "pct_7d": -1.1,
         "pct_30d": -10.2,
-        "updated_at": "2026-09-10T16:45:26.752973+00:00"
+        "updated_at": "2026-09-10T17:00:45.824075+00:00"
       },
       "ath_sol": 51.4999,
       "ath_ts": "2026-09-04T11:21:28+00:00",
@@ -10091,50 +10097,42 @@
       "synced_at": "2026-09-03T15:52:28.625832+00:00",
       "recent_tx": [
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 50.9351,
-          "ts": "2026-09-10T16:45:21+00:00"
-        },
-        {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 46.8835,
-          "ts": "2026-09-10T16:45:21+00:00"
+          "price_sol": 46.9957,
+          "ts": "2026-09-10T17:00:37+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 46.8835,
-          "ts": "2026-09-10T16:45:21+00:00"
+          "price_sol": 46.9957,
+          "ts": "2026-09-10T17:00:37+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 46.8825,
-          "ts": "2026-09-10T16:45:20+00:00"
+          "price_sol": 46.9947,
+          "ts": "2026-09-10T17:00:36+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 46.8825,
-          "ts": "2026-09-10T16:45:20+00:00"
+          "price_sol": 46.9947,
+          "ts": "2026-09-10T17:00:36+00:00"
+        },
+        {
+          "type": "bid",
+          "type_label": "Offer",
+          "price_sol": 46.9946,
+          "ts": "2026-09-10T17:00:28+00:00"
         }
       ],
       "synced_back_to": null,
       "history_complete": false,
       "sync_offset": 15100,
       "history_capped_by_api": true,
-      "last_market_alert_ts": "2026-09-10T16:45:21+00:00",
+      "last_market_alert_ts": "2026-09-10T16:45:33+00:00",
       "recent_alert_keys": [
-        {
-          "key": "list:CFydzHRZ3SFstpTi4x4bf2SGmXuUaNvoK4Udk3Vj2oqP",
-          "ts": "2026-09-10T14:56:03+00:00"
-        },
-        {
-          "key": "list:ttLVnZwpemfzX2yi7zZozL6KNqZKysYiVGooHwHVTWL",
-          "ts": "2026-09-10T14:56:11+00:00"
-        },
         {
           "key": "list:CFydzHRZ3SFstpTi4x4bf2SGmXuUaNvoK4Udk3Vj2oqP",
           "ts": "2026-09-10T15:14:23+00:00"
@@ -10186,6 +10184,10 @@
         {
           "key": "list:CFydzHRZ3SFstpTi4x4bf2SGmXuUaNvoK4Udk3Vj2oqP",
           "ts": "2026-09-10T16:45:21+00:00"
+        },
+        {
+          "key": "list:ttLVnZwpemfzX2yi7zZozL6KNqZKysYiVGooHwHVTWL",
+          "ts": "2026-09-10T16:45:33+00:00"
         }
       ]
     },
@@ -20247,24 +20249,30 @@
           "floor_sol": 14.5,
           "listed": 40,
           "sales_24h": 8
+        },
+        {
+          "ts": "2026-09-10T17:00:45.824075+00:00",
+          "floor_sol": 14.5,
+          "listed": 40,
+          "sales_24h": 7
         }
       ],
       "last_signal": "WATCH",
       "current": {
         "floor_sol": 14.5,
-        "floor_eur": 1238.74,
-        "floor_usdc": 1439.41,
+        "floor_eur": 1242.79,
+        "floor_usdc": 1444.35,
         "listed": 40,
         "avg_price_24h_sol": 13.966333333333335,
-        "sales_24h": 8,
-        "liquidity_ratio_pct": 20.0,
-        "sales_coverage_hours": 6.3,
+        "sales_24h": 7,
+        "liquidity_ratio_pct": 17.5,
+        "sales_coverage_hours": 6.5,
         "holders": null,
         "signal": "WATCH",
-        "signal_reason": "8 sale(s) in 24h, near all-time high (partial ATH/ATL, reduced reliability)",
+        "signal_reason": "7 sale(s) in 24h, near all-time high (partial ATH/ATL, reduced reliability)",
         "pct_7d": 3.6,
         "pct_30d": -9.2,
-        "updated_at": "2026-09-10T16:45:26.752973+00:00"
+        "updated_at": "2026-09-10T17:00:45.824075+00:00"
       },
       "ath_sol": 14.5,
       "ath_ts": "2026-09-05T10:58:26+00:00",
@@ -20276,32 +20284,32 @@
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 13.5109,
-          "ts": "2026-09-10T16:45:22+00:00"
+          "price_sol": 13.5442,
+          "ts": "2026-09-10T16:59:28+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 13.5109,
-          "ts": "2026-09-10T16:45:22+00:00"
+          "price_sol": 13.5442,
+          "ts": "2026-09-10T16:59:28+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 13.4999,
-          "ts": "2026-09-10T16:44:25+00:00"
+          "price_sol": 13.5332,
+          "ts": "2026-09-10T16:58:52+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 13.4999,
-          "ts": "2026-09-10T16:44:25+00:00"
+          "price_sol": 13.5332,
+          "ts": "2026-09-10T16:58:52+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 13.4998,
-          "ts": "2026-09-10T16:39:57+00:00"
+          "price_sol": 13.5331,
+          "ts": "2026-09-10T16:55:34+00:00"
         }
       ],
       "synced_back_to": null,
@@ -20309,10 +20317,6 @@
       "sync_offset": 15100,
       "last_market_alert_ts": "2026-09-10T15:39:51+00:00",
       "recent_alert_keys": [
-        {
-          "key": "list:EmGi66Ui5WUkFroLKvvZ7z7ERDQzH4EbkaZFNAy8znPy",
-          "ts": "2026-09-10T14:59:15+00:00"
-        },
         {
           "key": "list:6FdrRe1o5wuBrKY9FxoqE4MziegDUj4CuYppUB98MrtS",
           "ts": "2026-09-10T15:02:44+00:00"
@@ -30392,24 +30396,30 @@
           "floor_sol": 2.098,
           "listed": 124,
           "sales_24h": 0
+        },
+        {
+          "ts": "2026-09-10T17:00:45.824075+00:00",
+          "floor_sol": 2.098,
+          "listed": 124,
+          "sales_24h": 0
         }
       ],
       "last_signal": "WATCH",
       "current": {
         "floor_sol": 2.098,
-        "floor_eur": 179.23,
-        "floor_usdc": 208.27,
+        "floor_eur": 179.82,
+        "floor_usdc": 208.98,
         "listed": 124,
         "avg_price_24h_sol": 2.122,
         "sales_24h": 0,
         "liquidity_ratio_pct": 0.0,
-        "sales_coverage_hours": 1.0,
+        "sales_coverage_hours": 0.5,
         "holders": null,
         "signal": "WATCH",
         "signal_reason": "near all-time high (partial ATH/ATL, reduced reliability)",
         "pct_7d": 0.1,
         "pct_30d": -27.7,
-        "updated_at": "2026-09-10T16:45:26.752973+00:00"
+        "updated_at": "2026-09-10T17:00:45.824075+00:00"
       },
       "ath_sol": 2.122,
       "ath_ts": "2026-09-04T07:10:23+00:00",
@@ -30421,55 +30431,39 @@
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 1.556,
-          "ts": "2026-09-10T16:45:28+00:00"
+          "price_sol": 1.6241,
+          "ts": "2026-09-10T17:00:44+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 1.556,
-          "ts": "2026-09-10T16:45:28+00:00"
+          "price_sol": 1.6241,
+          "ts": "2026-09-10T17:00:44+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 1.555,
-          "ts": "2026-09-10T16:45:27+00:00"
+          "price_sol": 1.6231,
+          "ts": "2026-09-10T17:00:43+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 1.5549,
-          "ts": "2026-09-10T16:45:23+00:00"
+          "price_sol": 1.623,
+          "ts": "2026-09-10T17:00:38+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 1.5549,
-          "ts": "2026-09-10T16:45:23+00:00"
+          "price_sol": 1.623,
+          "ts": "2026-09-10T17:00:38+00:00"
         }
       ],
       "synced_back_to": null,
       "history_complete": false,
       "sync_offset": 15100,
-      "last_market_alert_ts": "2026-09-10T16:39:30+00:00",
+      "last_market_alert_ts": "2026-09-10T16:57:38+00:00",
       "recent_alert_keys": [
-        {
-          "key": "list:3f7gmogAXpH4o89QhbnRcHbDZ8uLWjbi2hXgu7FLhHWw",
-          "ts": "2026-09-10T14:46:43+00:00"
-        },
-        {
-          "key": "list:8onNvh27HDv4zoJGCWG31VJ5ekvtmbUBRU1UvgWZrEwJ",
-          "ts": "2026-09-10T14:50:18+00:00"
-        },
-        {
-          "key": "list:BHQRBKNYv6epLe3FeLtRQA2FMWZ2dsYexiwtMTqkzgzK",
-          "ts": "2026-09-10T14:54:49+00:00"
-        },
-        {
-          "key": "list:CGgr9be25Au9FJFUQiG7jCN99khkzEez1AjTR8BJduXg",
-          "ts": "2026-09-10T14:55:18+00:00"
-        },
         {
           "key": "list:AjGjggbo4WNjQHk4QJcQ77GGjtVmxaYbJuQg5YccFBnT",
           "ts": "2026-09-10T15:01:31+00:00"
@@ -30593,14 +30587,46 @@
         {
           "key": "list:8onNvh27HDv4zoJGCWG31VJ5ekvtmbUBRU1UvgWZrEwJ",
           "ts": "2026-09-10T16:39:30+00:00"
+        },
+        {
+          "key": "list:BHQRBKNYv6epLe3FeLtRQA2FMWZ2dsYexiwtMTqkzgzK",
+          "ts": "2026-09-10T16:46:13+00:00"
+        },
+        {
+          "key": "list:CGgr9be25Au9FJFUQiG7jCN99khkzEez1AjTR8BJduXg",
+          "ts": "2026-09-10T16:46:51+00:00"
+        },
+        {
+          "key": "list:AjGjggbo4WNjQHk4QJcQ77GGjtVmxaYbJuQg5YccFBnT",
+          "ts": "2026-09-10T16:47:18+00:00"
+        },
+        {
+          "key": "list:F7jS1wgsTm1A2wtELLKcEDX4qr7vSAPXsCHt2SZ15rQP",
+          "ts": "2026-09-10T16:47:48+00:00"
+        },
+        {
+          "key": "list:5WqtJ6cCaV2hPBchSz9W8kbmigfrHx4Ty4mFUzYxvcWD",
+          "ts": "2026-09-10T16:51:51+00:00"
+        },
+        {
+          "key": "list:3f7gmogAXpH4o89QhbnRcHbDZ8uLWjbi2hXgu7FLhHWw",
+          "ts": "2026-09-10T16:55:17+00:00"
+        },
+        {
+          "key": "list:2yXJMG5MzusDAEqmuUnYYg5okYzkVrnEUMmLpn1ZWdGa",
+          "ts": "2026-09-10T16:57:11+00:00"
+        },
+        {
+          "key": "list:8onNvh27HDv4zoJGCWG31VJ5ekvtmbUBRU1UvgWZrEwJ",
+          "ts": "2026-09-10T16:57:38+00:00"
         }
       ],
       "history_capped_by_api": true
     }
   },
-  "last_update": "2026-09-10T16:45:26.752973+00:00",
-  "sol_eur": 85.43,
-  "sol_usdc": 99.27,
+  "last_update": "2026-09-10T17:00:45.824075+00:00",
+  "sol_eur": 85.71,
+  "sol_usdc": 99.61,
   "total_holders_naive": null,
   "last_heartbeat_ts": "2026-09-10T16:00:51.026046+00:00",
   "coverage_debug": {

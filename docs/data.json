@@ -14102,24 +14102,30 @@
           "floor_sol": 50.5,
           "listed": 22,
           "sales_24h": 2
+        },
+        {
+          "ts": "2026-09-18T07:30:38.345236+00:00",
+          "floor_sol": 50.5,
+          "listed": 22,
+          "sales_24h": 2
         }
       ],
       "last_signal": "WATCH",
       "current": {
         "floor_sol": 50.5,
-        "floor_eur": 4650.04,
-        "floor_usdc": 5340.38,
+        "floor_eur": 4654.59,
+        "floor_usdc": 5343.4,
         "listed": 22,
         "avg_price_24h_sol": 50.39995,
         "sales_24h": 2,
         "liquidity_ratio_pct": 9.1,
-        "sales_coverage_hours": 22.0,
+        "sales_coverage_hours": 22.2,
         "holders": null,
         "signal": "WATCH",
         "signal_reason": "2 sale(s) in 24h, near all-time high (partial ATH/ATL, reduced reliability)",
         "pct_7d": 2.9,
         "pct_30d": -15.7,
-        "updated_at": "2026-09-18T07:15:26.205342+00:00"
+        "updated_at": "2026-09-18T07:30:38.345236+00:00"
       },
       "ath_sol": 51.4999,
       "ath_ts": "2026-09-04T11:21:28+00:00",
@@ -14131,40 +14137,49 @@
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 49.238,
-          "ts": "2026-09-18T07:01:55+00:00"
+          "price_sol": 49.2391,
+          "ts": "2026-09-18T07:20:09+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 49.238,
-          "ts": "2026-09-18T07:01:55+00:00"
+          "price_sol": 49.2391,
+          "ts": "2026-09-18T07:20:09+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 49.237,
-          "ts": "2026-09-18T07:01:54+00:00"
+          "price_sol": 49.2381,
+          "ts": "2026-09-18T07:20:09+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 49.237,
-          "ts": "2026-09-18T07:01:54+00:00"
+          "price_sol": 49.2381,
+          "ts": "2026-09-18T07:20:09+00:00"
         },
         {
-          "type": "bid",
-          "type_label": "Offer",
-          "price_sol": 49.3606,
-          "ts": "2026-09-18T06:53:35+00:00"
+          "type": "list",
+          "type_label": "Listed",
+          "price_sol": 53.9984,
+          "ts": "2026-09-18T07:19:02+00:00"
         }
       ],
       "synced_back_to": null,
       "history_complete": false,
       "sync_offset": 15100,
       "history_capped_by_api": true,
-      "last_market_alert_ts": "2026-09-18T05:05:02+00:00",
-      "recent_alert_keys": []
+      "last_market_alert_ts": "2026-09-18T07:19:02+00:00",
+      "recent_alert_keys": [
+        {
+          "key": "list:3cGM1CyrCMn1YfJhcT411TgHDQ2AKz1hHB1Z1hM86wFj",
+          "ts": "2026-09-18T07:17:43+00:00"
+        },
+        {
+          "key": "list:ttLVnZwpemfzX2yi7zZozL6KNqZKysYiVGooHwHVTWL",
+          "ts": "2026-09-18T07:19:02+00:00"
+        }
+      ]
     },
     "the_reflection_of_love": {
       "label": "Reflection",
@@ -28268,24 +28283,30 @@
           "floor_sol": 16.5,
           "listed": 38,
           "sales_24h": 0
+        },
+        {
+          "ts": "2026-09-18T07:30:38.345236+00:00",
+          "floor_sol": 16.5,
+          "listed": 38,
+          "sales_24h": 0
         }
       ],
       "last_signal": "WATCH",
       "current": {
         "floor_sol": 16.5,
-        "floor_eur": 1519.32,
-        "floor_usdc": 1744.88,
+        "floor_eur": 1520.81,
+        "floor_usdc": 1745.87,
         "listed": 38,
         "avg_price_24h_sol": null,
         "sales_24h": 0,
         "liquidity_ratio_pct": 0.0,
-        "sales_coverage_hours": 2.0,
+        "sales_coverage_hours": 1.9,
         "holders": null,
         "signal": "WATCH",
         "signal_reason": "near all-time high (partial ATH/ATL, reduced reliability)",
         "pct_7d": 6.8,
         "pct_30d": -17.3,
-        "updated_at": "2026-09-18T07:15:26.205342+00:00"
+        "updated_at": "2026-09-18T07:30:38.345236+00:00"
       },
       "ath_sol": 15.99,
       "ath_ts": "2026-09-15T12:03:40+00:00",
@@ -28297,139 +28318,39 @@
         {
           "type": "list",
           "type_label": "Listed",
-          "price_sol": 17.5801,
-          "ts": "2026-09-18T07:14:12+00:00"
-        },
-        {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 17.5802,
-          "ts": "2026-09-18T07:14:07+00:00"
+          "price_sol": 17.5656,
+          "ts": "2026-09-18T07:30:36+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 15.744,
-          "ts": "2026-09-18T07:13:56+00:00"
+          "price_sol": 15.636,
+          "ts": "2026-09-18T07:29:52+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 15.744,
-          "ts": "2026-09-18T07:13:56+00:00"
+          "price_sol": 15.636,
+          "ts": "2026-09-18T07:29:52+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 15.743,
-          "ts": "2026-09-18T07:13:55+00:00"
+          "price_sol": 15.635,
+          "ts": "2026-09-18T07:29:51+00:00"
+        },
+        {
+          "type": "poolUpdate",
+          "type_label": "poolUpdate",
+          "price_sol": 15.635,
+          "ts": "2026-09-18T07:29:51+00:00"
         }
       ],
       "synced_back_to": null,
       "history_complete": false,
       "sync_offset": 15100,
-      "last_market_alert_ts": "2026-09-18T07:14:12+00:00",
+      "last_market_alert_ts": "2026-09-18T07:30:36+00:00",
       "recent_alert_keys": [
-        {
-          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
-          "ts": "2026-09-18T05:15:50+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:15:56+00:00"
-        },
-        {
-          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
-          "ts": "2026-09-18T05:17:46+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:17:50+00:00"
-        },
-        {
-          "key": "list:EmGi66Ui5WUkFroLKvvZ7z7ERDQzH4EbkaZFNAy8znPy",
-          "ts": "2026-09-18T05:18:39+00:00"
-        },
-        {
-          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
-          "ts": "2026-09-18T05:19:38+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:19:45+00:00"
-        },
-        {
-          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
-          "ts": "2026-09-18T05:21:36+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:21:38+00:00"
-        },
-        {
-          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
-          "ts": "2026-09-18T05:23:25+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:23:30+00:00"
-        },
-        {
-          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-09-18T05:25:00+00:00"
-        },
-        {
-          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
-          "ts": "2026-09-18T05:25:01+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:25:06+00:00"
-        },
-        {
-          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
-          "ts": "2026-09-18T05:26:41+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:26:46+00:00"
-        },
-        {
-          "key": "list:6FdrRe1o5wuBrKY9FxoqE4MziegDUj4CuYppUB98MrtS",
-          "ts": "2026-09-18T05:27:18+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:27:24+00:00"
-        },
-        {
-          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
-          "ts": "2026-09-18T05:28:27+00:00"
-        },
-        {
-          "key": "list:G3xfH6pzxNPDBR6Juecjz6qeAwtT5CYjT9BYmKY9UcQR",
-          "ts": "2026-09-18T05:28:33+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:28:33+00:00"
-        },
-        {
-          "key": "list:DqvTWm9woSLMAxJLq4umCihHXQ6sQxeky2c8KoHucrLS",
-          "ts": "2026-09-18T05:28:38+00:00"
-        },
-        {
-          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
-          "ts": "2026-09-18T05:30:15+00:00"
-        },
-        {
-          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
-          "ts": "2026-09-18T05:30:17+00:00"
-        },
-        {
-          "key": "list:5rYcGnu4FtSGu66Bpg9gnbAFzz9Ze4PDfodKEsXwzWmR",
-          "ts": "2026-09-18T05:30:28+00:00"
-        },
         {
           "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
           "ts": "2026-09-18T05:32:03+00:00"
@@ -28997,6 +28918,98 @@
         {
           "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
           "ts": "2026-09-18T07:14:12+00:00"
+        },
+        {
+          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
+          "ts": "2026-09-18T07:16:03+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-09-18T07:16:03+00:00"
+        },
+        {
+          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
+          "ts": "2026-09-18T07:16:08+00:00"
+        },
+        {
+          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
+          "ts": "2026-09-18T07:17:59+00:00"
+        },
+        {
+          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
+          "ts": "2026-09-18T07:18:04+00:00"
+        },
+        {
+          "key": "list:6FdrRe1o5wuBrKY9FxoqE4MziegDUj4CuYppUB98MrtS",
+          "ts": "2026-09-18T07:18:13+00:00"
+        },
+        {
+          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
+          "ts": "2026-09-18T07:18:20+00:00"
+        },
+        {
+          "key": "list:DqvTWm9woSLMAxJLq4umCihHXQ6sQxeky2c8KoHucrLS",
+          "ts": "2026-09-18T07:18:49+00:00"
+        },
+        {
+          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
+          "ts": "2026-09-18T07:19:44+00:00"
+        },
+        {
+          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
+          "ts": "2026-09-18T07:19:50+00:00"
+        },
+        {
+          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
+          "ts": "2026-09-18T07:21:27+00:00"
+        },
+        {
+          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
+          "ts": "2026-09-18T07:21:31+00:00"
+        },
+        {
+          "key": "list:5rYcGnu4FtSGu66Bpg9gnbAFzz9Ze4PDfodKEsXwzWmR",
+          "ts": "2026-09-18T07:22:22+00:00"
+        },
+        {
+          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
+          "ts": "2026-09-18T07:23:20+00:00"
+        },
+        {
+          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
+          "ts": "2026-09-18T07:23:26+00:00"
+        },
+        {
+          "key": "list:EmGi66Ui5WUkFroLKvvZ7z7ERDQzH4EbkaZFNAy8znPy",
+          "ts": "2026-09-18T07:25:03+00:00"
+        },
+        {
+          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
+          "ts": "2026-09-18T07:25:11+00:00"
+        },
+        {
+          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
+          "ts": "2026-09-18T07:25:18+00:00"
+        },
+        {
+          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
+          "ts": "2026-09-18T07:26:54+00:00"
+        },
+        {
+          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
+          "ts": "2026-09-18T07:26:58+00:00"
+        },
+        {
+          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
+          "ts": "2026-09-18T07:28:38+00:00"
+        },
+        {
+          "key": "list:9g5kPdtbZyQNpmD6wPxZAvjN53MUhqEEnfBNSJFfVq7W",
+          "ts": "2026-09-18T07:28:45+00:00"
+        },
+        {
+          "key": "list:BxQH2TS3iBxmF8ysud5g9dAxTqfVCBdbBGCtAqG4dfVF",
+          "ts": "2026-09-18T07:30:36+00:00"
         }
       ],
       "history_capped_by_api": true
@@ -43091,13 +43104,19 @@
           "floor_sol": 2.1921,
           "listed": 122,
           "sales_24h": 0
+        },
+        {
+          "ts": "2026-09-18T07:30:38.345236+00:00",
+          "floor_sol": 2.1917,
+          "listed": 122,
+          "sales_24h": 0
         }
       ],
       "last_signal": "WATCH",
       "current": {
-        "floor_sol": 2.1921,
-        "floor_eur": 201.85,
-        "floor_usdc": 231.81,
+        "floor_sol": 2.1917,
+        "floor_eur": 202.01,
+        "floor_usdc": 231.9,
         "listed": 122,
         "avg_price_24h_sol": 2.173,
         "sales_24h": 0,
@@ -43108,7 +43127,7 @@
         "signal_reason": "near all-time high (partial ATH/ATL, reduced reliability)",
         "pct_7d": 4.5,
         "pct_30d": -31.5,
-        "updated_at": "2026-09-18T07:15:26.205342+00:00"
+        "updated_at": "2026-09-18T07:30:38.345236+00:00"
       },
       "ath_sol": 2.199508,
       "ath_ts": "2026-09-12T02:03:02+00:00",
@@ -43120,47 +43139,39 @@
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 2.0602,
-          "ts": "2026-09-18T07:13:52+00:00"
+          "price_sol": 2.0822,
+          "ts": "2026-09-18T07:29:51+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 2.0602,
-          "ts": "2026-09-18T07:13:52+00:00"
+          "price_sol": 2.0822,
+          "ts": "2026-09-18T07:29:51+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 2.0592,
-          "ts": "2026-09-18T07:13:52+00:00"
+          "price_sol": 2.0817,
+          "ts": "2026-09-18T07:29:51+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 2.0592,
-          "ts": "2026-09-18T07:13:52+00:00"
+          "price_sol": 2.0817,
+          "ts": "2026-09-18T07:29:51+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 2.0577,
-          "ts": "2026-09-18T07:12:04+00:00"
+          "price_sol": 2.0802,
+          "ts": "2026-09-18T07:28:06+00:00"
         }
       ],
       "synced_back_to": null,
       "history_complete": false,
       "sync_offset": 15100,
-      "last_market_alert_ts": "2026-09-18T07:07:31+00:00",
+      "last_market_alert_ts": "2026-09-18T07:27:23+00:00",
       "recent_alert_keys": [
-        {
-          "key": "list:8onNvh27HDv4zoJGCWG31VJ5ekvtmbUBRU1UvgWZrEwJ",
-          "ts": "2026-09-18T05:16:19+00:00"
-        },
-        {
-          "key": "list:F7jS1wgsTm1A2wtELLKcEDX4qr7vSAPXsCHt2SZ15rQP",
-          "ts": "2026-09-18T05:30:40+00:00"
-        },
         {
           "key": "list:8onNvh27HDv4zoJGCWG31VJ5ekvtmbUBRU1UvgWZrEwJ",
           "ts": "2026-09-18T05:32:50+00:00"
@@ -43252,14 +43263,30 @@
         {
           "key": "list:8onNvh27HDv4zoJGCWG31VJ5ekvtmbUBRU1UvgWZrEwJ",
           "ts": "2026-09-18T07:07:31+00:00"
+        },
+        {
+          "key": "list:F7jS1wgsTm1A2wtELLKcEDX4qr7vSAPXsCHt2SZ15rQP",
+          "ts": "2026-09-18T07:20:55+00:00"
+        },
+        {
+          "key": "list:8onNvh27HDv4zoJGCWG31VJ5ekvtmbUBRU1UvgWZrEwJ",
+          "ts": "2026-09-18T07:21:30+00:00"
+        },
+        {
+          "key": "list:5WqtJ6cCaV2hPBchSz9W8kbmigfrHx4Ty4mFUzYxvcWD",
+          "ts": "2026-09-18T07:25:24+00:00"
+        },
+        {
+          "key": "list:8onNvh27HDv4zoJGCWG31VJ5ekvtmbUBRU1UvgWZrEwJ",
+          "ts": "2026-09-18T07:27:23+00:00"
         }
       ],
       "history_capped_by_api": true
     }
   },
-  "last_update": "2026-09-18T07:15:26.205342+00:00",
-  "sol_eur": 92.08,
-  "sol_usdc": 105.75,
+  "last_update": "2026-09-18T07:30:38.345236+00:00",
+  "sol_eur": 92.17,
+  "sol_usdc": 105.81,
   "total_holders_naive": null,
   "last_heartbeat_ts": "2026-09-18T06:30:38.306589+00:00",
   "coverage_debug": {

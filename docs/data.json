@@ -23222,24 +23222,30 @@
           "floor_sol": 46.3879,
           "listed": 25,
           "sales_24h": 0
+        },
+        {
+          "ts": "2026-10-05T19:28:33.038682+00:00",
+          "floor_sol": 46.3727,
+          "listed": 26,
+          "sales_24h": 0
         }
       ],
       "last_signal": "WATCH",
       "current": {
-        "floor_sol": 46.3879,
-        "floor_eur": 4996.9,
-        "floor_usdc": 5599.02,
-        "listed": 25,
-        "avg_price_24h_sol": null,
+        "floor_sol": 46.3727,
+        "floor_eur": 4966.52,
+        "floor_usdc": 5572.61,
+        "listed": 26,
+        "avg_price_24h_sol": 46.0,
         "sales_24h": 0,
         "liquidity_ratio_pct": 0.0,
-        "sales_coverage_hours": 12.2,
+        "sales_coverage_hours": 0.2,
         "holders": null,
         "signal": "WATCH",
         "signal_reason": "No clear movement.",
-        "pct_7d": 2.1,
-        "pct_30d": -6.4,
-        "updated_at": "2026-10-05T10:51:04.775567+00:00"
+        "pct_7d": -0.0,
+        "pct_30d": -9.9,
+        "updated_at": "2026-10-05T19:28:33.038682+00:00"
       },
       "ath_sol": 51.4999,
       "ath_ts": "2026-09-04T11:21:28+00:00",
@@ -23249,369 +23255,77 @@
       "synced_at": "2026-09-03T15:52:28.625832+00:00",
       "recent_tx": [
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 46.3879,
-          "ts": "2026-10-05T10:46:34+00:00"
+          "type": "bid",
+          "type_label": "Offer",
+          "price_sol": 44.9867,
+          "ts": "2026-10-05T19:28:28+00:00"
         },
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 46.3889,
-          "ts": "2026-10-05T10:46:33+00:00"
+          "type": "bid",
+          "type_label": "Offer",
+          "price_sol": 44.9867,
+          "ts": "2026-10-05T19:28:28+00:00"
         },
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 46.389,
-          "ts": "2026-10-05T10:41:43+00:00"
+          "type": "poolUpdate",
+          "type_label": "poolUpdate",
+          "price_sol": 44.9867,
+          "ts": "2026-10-05T19:28:28+00:00"
         },
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 46.39,
-          "ts": "2026-10-05T10:41:43+00:00"
+          "type": "poolUpdate",
+          "type_label": "poolUpdate",
+          "price_sol": 44.9867,
+          "ts": "2026-10-05T19:28:28+00:00"
         },
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 46.3901,
-          "ts": "2026-10-05T10:36:50+00:00"
+          "type": "bid",
+          "type_label": "Offer",
+          "price_sol": 44.9846,
+          "ts": "2026-10-05T19:28:20+00:00"
         }
       ],
       "synced_back_to": null,
       "history_complete": false,
       "sync_offset": 15100,
       "history_capped_by_api": true,
-      "last_market_alert_ts": "2026-10-05T10:46:34+00:00",
+      "last_market_alert_ts": "2026-10-05T19:27:04+00:00",
       "recent_alert_keys": [
         {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T08:52:47+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T08:52:58+00:00"
-        },
-        {
           "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T08:55:28+00:00"
+          "ts": "2026-10-05T19:17:36+00:00"
         },
         {
           "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T08:55:29+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T08:56:04+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T08:56:10+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T08:57:09+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T08:57:16+00:00"
+          "ts": "2026-10-05T19:17:37+00:00"
         },
         {
           "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:00:09+00:00"
+          "ts": "2026-10-05T19:22:13+00:00"
         },
         {
           "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:00:10+00:00"
+          "ts": "2026-10-05T19:22:14+00:00"
+        },
+        {
+          "key": "list:7YA78STdVkGwrdT1nh6r58MaDPNL5btWv77hwY4wke61",
+          "ts": "2026-10-05T19:22:23+00:00"
+        },
+        {
+          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
+          "ts": "2026-10-05T19:25:31+00:00"
+        },
+        {
+          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
+          "ts": "2026-10-05T19:25:35+00:00"
         },
         {
           "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:05:08+00:00"
+          "ts": "2026-10-05T19:27:03+00:00"
         },
         {
           "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:05:09+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:06:03+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:06:13+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:08:00+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:08:05+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:09:22+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:09:34+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:09:46+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:09:46+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:11:55+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:12:03+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:14:41+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:14:43+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:19:27+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:19:28+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:24:17+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:24:18+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:25:48+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:25:57+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:27:48+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:28:00+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:29:07+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:29:07+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:33:54+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:33:55+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:38:48+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:38:49+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:42:00+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:42:12+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:42:56+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:43:07+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:43:36+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:43:37+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:48:18+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T09:48:34+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:48:37+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:48:38+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:53:18+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:53:19+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:58:09+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:58:10+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T09:59:54+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T09:59:54+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:02:52+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:02:52+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:07:48+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:07:49+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:12:44+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:12:45+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T10:13:35+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T10:13:45+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:17:40+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:17:40+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T10:22:05+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T10:22:11+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:22:32+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:22:33+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T10:27:11+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:27:16+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:27:16+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T10:27:20+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T10:30:52+00:00"
-        },
-        {
-          "key": "list:2ybt1Wa9QqYrTu393bAYtH6q7g2ywcDKqEc9uszmKC1r",
-          "ts": "2026-10-05T10:30:57+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:32:03+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:32:03+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:36:49+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:36:50+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:41:43+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:41:43+00:00"
-        },
-        {
-          "key": "list:ECmENYCx8QqUdcZmCk1j4d7VVbXdeveAk7bBUxfBuSkG",
-          "ts": "2026-10-05T10:46:33+00:00"
-        },
-        {
-          "key": "list:6r9SLKgE55vdzJXBeAuFTgu3WgHCcCHaNs3GmrU4Ranu",
-          "ts": "2026-10-05T10:46:34+00:00"
+          "ts": "2026-10-05T19:27:04+00:00"
         }
       ]
     },
@@ -46861,24 +46575,30 @@
           "floor_sol": 15.7844,
           "listed": 36,
           "sales_24h": 0
+        },
+        {
+          "ts": "2026-10-05T19:28:33.038682+00:00",
+          "floor_sol": 15.6332,
+          "listed": 36,
+          "sales_24h": 0
         }
       ],
       "last_signal": "WATCH",
       "current": {
-        "floor_sol": 15.7844,
-        "floor_eur": 1700.3,
-        "floor_usdc": 1905.18,
+        "floor_sol": 15.6332,
+        "floor_eur": 1674.32,
+        "floor_usdc": 1878.64,
         "listed": 36,
-        "avg_price_24h_sol": 15.7795,
+        "avg_price_24h_sol": 15.579633333333334,
         "sales_24h": 0,
         "liquidity_ratio_pct": 0.0,
         "sales_coverage_hours": 0.6,
         "holders": null,
         "signal": "WATCH",
         "signal_reason": "No clear movement.",
-        "pct_7d": 14.8,
-        "pct_30d": 12.7,
-        "updated_at": "2026-10-05T10:51:04.775567+00:00"
+        "pct_7d": 1.1,
+        "pct_30d": 10.9,
+        "updated_at": "2026-10-05T19:28:33.038682+00:00"
       },
       "ath_sol": 17.7451,
       "ath_ts": "2026-09-27T12:09:14+00:00",
@@ -46888,1256 +46608,1476 @@
       "synced_at": "2026-09-03T15:52:28.625832+00:00",
       "recent_tx": [
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 15.7844,
-          "ts": "2026-10-05T10:50:57+00:00"
+          "type": "bid",
+          "type_label": "Offer",
+          "price_sol": 14.8947,
+          "ts": "2026-10-05T19:28:32+00:00"
         },
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 15.7855,
-          "ts": "2026-10-05T10:50:57+00:00"
+          "type": "poolUpdate",
+          "type_label": "poolUpdate",
+          "price_sol": 14.8947,
+          "ts": "2026-10-05T19:28:32+00:00"
         },
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 15.7855,
-          "ts": "2026-10-05T10:50:48+00:00"
+          "type": "bid",
+          "type_label": "Offer",
+          "price_sol": 14.8937,
+          "ts": "2026-10-05T19:28:32+00:00"
         },
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 15.7867,
-          "ts": "2026-10-05T10:50:37+00:00"
+          "type": "poolUpdate",
+          "type_label": "poolUpdate",
+          "price_sol": 14.8937,
+          "ts": "2026-10-05T19:28:32+00:00"
         },
         {
-          "type": "list",
-          "type_label": "Listed",
-          "price_sol": 15.7868,
-          "ts": "2026-10-05T10:50:36+00:00"
+          "type": "bid",
+          "type_label": "Offer",
+          "price_sol": 14.8826,
+          "ts": "2026-10-05T19:28:30+00:00"
         }
       ],
       "synced_back_to": null,
       "history_complete": false,
       "sync_offset": 15100,
-      "last_market_alert_ts": "2026-10-05T10:50:57+00:00",
+      "last_market_alert_ts": "2026-10-05T19:28:23+00:00",
       "recent_alert_keys": [
         {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:53:43+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:53:44+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:53:48+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:53:53+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:54:06+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:54:09+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:54:13+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:54:18+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:54:27+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:54:31+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:54:39+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:54:44+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:54:51+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:54:58+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:55:04+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:55:09+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:55:14+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:55:21+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:55:27+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:55:30+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:55:36+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:55:41+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:55:50+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:55:54+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:56:00+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:56:04+00:00"
+        },
+        {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:20:30+00:00"
+          "ts": "2026-10-05T18:56:09+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:20:36+00:00"
+          "ts": "2026-10-05T18:56:14+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:20:44+00:00"
+          "ts": "2026-10-05T18:56:21+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:20:48+00:00"
+          "ts": "2026-10-05T18:56:27+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:20:52+00:00"
+          "ts": "2026-10-05T18:56:32+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:20:58+00:00"
+          "ts": "2026-10-05T18:56:37+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:21:03+00:00"
+          "ts": "2026-10-05T18:56:42+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:21:08+00:00"
+          "ts": "2026-10-05T18:56:46+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:21:13+00:00"
+          "ts": "2026-10-05T18:56:54+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:21:18+00:00"
+          "ts": "2026-10-05T18:56:57+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:21:24+00:00"
+          "ts": "2026-10-05T18:57:04+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:21:30+00:00"
+          "ts": "2026-10-05T18:57:11+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:21:37+00:00"
+          "ts": "2026-10-05T18:57:17+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:21:42+00:00"
+          "ts": "2026-10-05T18:57:20+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:21:46+00:00"
+          "ts": "2026-10-05T18:57:27+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:21:51+00:00"
+          "ts": "2026-10-05T18:57:31+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:21:59+00:00"
+          "ts": "2026-10-05T18:57:35+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:22:11+00:00"
+          "ts": "2026-10-05T18:57:46+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:57:46+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:22:12+00:00"
+          "ts": "2026-10-05T18:57:54+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:57:58+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:22:21+00:00"
+          "ts": "2026-10-05T18:58:02+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:22:29+00:00"
+          "ts": "2026-10-05T18:58:07+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:22:33+00:00"
+          "ts": "2026-10-05T18:58:11+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:22:40+00:00"
+          "ts": "2026-10-05T18:58:15+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T18:58:21+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:22:51+00:00"
+          "ts": "2026-10-05T18:58:28+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:22:53+00:00"
+          "ts": "2026-10-05T18:58:30+00:00"
         },
         {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T18:58:36+00:00"
+        },
+        {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:23:04+00:00"
+          "ts": "2026-10-05T18:58:41+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:23:14+00:00"
+          "ts": "2026-10-05T18:58:50+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:23:17+00:00"
+          "ts": "2026-10-05T18:58:53+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:23:22+00:00"
+          "ts": "2026-10-05T18:58:58+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:23:27+00:00"
+          "ts": "2026-10-05T18:59:01+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:23:34+00:00"
+          "ts": "2026-10-05T18:59:10+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:23:39+00:00"
+          "ts": "2026-10-05T18:59:14+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:23:43+00:00"
+          "ts": "2026-10-05T18:59:18+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:23:52+00:00"
+          "ts": "2026-10-05T18:59:23+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:23:59+00:00"
+          "ts": "2026-10-05T18:59:27+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:24:02+00:00"
+          "ts": "2026-10-05T18:59:30+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:24:09+00:00"
+          "ts": "2026-10-05T18:59:36+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:24:14+00:00"
+          "ts": "2026-10-05T18:59:45+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:24:18+00:00"
+          "ts": "2026-10-05T18:59:51+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:24:23+00:00"
+          "ts": "2026-10-05T18:59:56+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:24:30+00:00"
+          "ts": "2026-10-05T19:00:03+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:24:35+00:00"
+          "ts": "2026-10-05T19:00:07+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:24:38+00:00"
+          "ts": "2026-10-05T19:00:13+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:24:45+00:00"
+          "ts": "2026-10-05T19:00:21+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:24:50+00:00"
+          "ts": "2026-10-05T19:00:32+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:00:41+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:25:04+00:00"
+          "ts": "2026-10-05T19:00:48+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:25:05+00:00"
+          "ts": "2026-10-05T19:00:54+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T19:01:01+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:25:15+00:00"
+          "ts": "2026-10-05T19:01:04+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:25:20+00:00"
+          "ts": "2026-10-05T19:01:08+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:25:24+00:00"
+          "ts": "2026-10-05T19:01:12+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:25:30+00:00"
+          "ts": "2026-10-05T19:01:17+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:25:34+00:00"
+          "ts": "2026-10-05T19:01:22+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:25:40+00:00"
+          "ts": "2026-10-05T19:01:28+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:25:45+00:00"
+          "ts": "2026-10-05T19:01:33+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:25:48+00:00"
+          "ts": "2026-10-05T19:01:39+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:25:54+00:00"
+          "ts": "2026-10-05T19:01:44+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:26:01+00:00"
+          "ts": "2026-10-05T19:01:50+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:26:04+00:00"
+          "ts": "2026-10-05T19:01:55+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:26:12+00:00"
+          "ts": "2026-10-05T19:01:59+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:26:20+00:00"
+          "ts": "2026-10-05T19:02:03+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:26:25+00:00"
+          "ts": "2026-10-05T19:02:12+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:26:30+00:00"
+          "ts": "2026-10-05T19:02:17+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:26:36+00:00"
+          "ts": "2026-10-05T19:02:23+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:26:40+00:00"
+          "ts": "2026-10-05T19:02:29+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:26:44+00:00"
+          "ts": "2026-10-05T19:02:35+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:26:49+00:00"
+          "ts": "2026-10-05T19:02:38+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:26:56+00:00"
+          "ts": "2026-10-05T19:02:44+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:27:00+00:00"
+          "ts": "2026-10-05T19:02:49+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:27:05+00:00"
+          "ts": "2026-10-05T19:02:54+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:27:10+00:00"
+          "ts": "2026-10-05T19:03:00+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T19:03:04+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:27:30+00:00"
+          "ts": "2026-10-05T19:03:24+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:03:24+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:27:33+00:00"
+          "ts": "2026-10-05T19:03:29+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:27:47+00:00"
+          "ts": "2026-10-05T19:03:33+00:00"
         },
         {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:03:39+00:00"
+        },
+        {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:28:01+00:00"
+          "ts": "2026-10-05T19:03:44+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:28:01+00:00"
+          "ts": "2026-10-05T19:03:48+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T19:03:53+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:28:10+00:00"
+          "ts": "2026-10-05T19:03:58+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:28:15+00:00"
+          "ts": "2026-10-05T19:04:04+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:28:23+00:00"
+          "ts": "2026-10-05T19:04:09+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:28:30+00:00"
+          "ts": "2026-10-05T19:04:13+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:28:36+00:00"
+          "ts": "2026-10-05T19:04:20+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:28:41+00:00"
+          "ts": "2026-10-05T19:04:24+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:28:45+00:00"
+          "ts": "2026-10-05T19:04:32+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:29:02+00:00"
+          "ts": "2026-10-05T19:04:37+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:29:09+00:00"
+          "ts": "2026-10-05T19:04:40+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:29:16+00:00"
+          "ts": "2026-10-05T19:04:44+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:29:23+00:00"
+          "ts": "2026-10-05T19:04:48+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:29:27+00:00"
+          "ts": "2026-10-05T19:04:55+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:29:33+00:00"
+          "ts": "2026-10-05T19:05:01+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:29:38+00:00"
+          "ts": "2026-10-05T19:05:06+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:29:42+00:00"
+          "ts": "2026-10-05T19:05:09+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:29:47+00:00"
+          "ts": "2026-10-05T19:05:16+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:29:51+00:00"
+          "ts": "2026-10-05T19:05:25+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:29:57+00:00"
+          "ts": "2026-10-05T19:05:33+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:30:02+00:00"
+          "ts": "2026-10-05T19:05:39+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:30:06+00:00"
+          "ts": "2026-10-05T19:05:49+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:30:11+00:00"
+          "ts": "2026-10-05T19:05:55+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:30:21+00:00"
+          "ts": "2026-10-05T19:06:04+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:06:12+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:30:32+00:00"
+          "ts": "2026-10-05T19:06:17+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:30:38+00:00"
+          "ts": "2026-10-05T19:06:20+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:30:41+00:00"
+          "ts": "2026-10-05T19:06:26+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:30:46+00:00"
+          "ts": "2026-10-05T19:06:40+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:30:52+00:00"
+          "ts": "2026-10-05T19:06:41+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:30:58+00:00"
+          "ts": "2026-10-05T19:06:46+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:31:06+00:00"
+          "ts": "2026-10-05T19:06:59+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:31:12+00:00"
+          "ts": "2026-10-05T19:07:02+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:31:18+00:00"
+          "ts": "2026-10-05T19:07:08+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:31:21+00:00"
+          "ts": "2026-10-05T19:07:13+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:31:32+00:00"
+          "ts": "2026-10-05T19:07:22+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:31:41+00:00"
+          "ts": "2026-10-05T19:07:30+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:31:54+00:00"
+          "ts": "2026-10-05T19:07:34+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:31:59+00:00"
+          "ts": "2026-10-05T19:07:37+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:32:09+00:00"
+          "ts": "2026-10-05T19:07:42+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:32:13+00:00"
+          "ts": "2026-10-05T19:07:46+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:32:18+00:00"
+          "ts": "2026-10-05T19:07:53+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:32:22+00:00"
+          "ts": "2026-10-05T19:07:56+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:32:29+00:00"
+          "ts": "2026-10-05T19:08:03+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:32:33+00:00"
+          "ts": "2026-10-05T19:08:06+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:32:37+00:00"
+          "ts": "2026-10-05T19:08:11+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:32:43+00:00"
+          "ts": "2026-10-05T19:08:17+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:32:50+00:00"
+          "ts": "2026-10-05T19:08:24+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:32:52+00:00"
+          "ts": "2026-10-05T19:08:27+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:32:57+00:00"
+          "ts": "2026-10-05T19:08:31+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:33:05+00:00"
+          "ts": "2026-10-05T19:08:37+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:33:09+00:00"
+          "ts": "2026-10-05T19:08:42+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:08:47+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:33:19+00:00"
+          "ts": "2026-10-05T19:08:52+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:33:25+00:00"
+          "ts": "2026-10-05T19:08:59+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:33:28+00:00"
+          "ts": "2026-10-05T19:09:06+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:33:34+00:00"
+          "ts": "2026-10-05T19:09:12+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:33:42+00:00"
+          "ts": "2026-10-05T19:09:19+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:33:46+00:00"
+          "ts": "2026-10-05T19:09:21+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:33:51+00:00"
+          "ts": "2026-10-05T19:09:27+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:33:55+00:00"
+          "ts": "2026-10-05T19:09:35+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:34:05+00:00"
+          "ts": "2026-10-05T19:09:38+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:34:14+00:00"
+          "ts": "2026-10-05T19:09:46+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:34:15+00:00"
+          "ts": "2026-10-05T19:09:48+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:34:20+00:00"
+          "ts": "2026-10-05T19:09:53+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:34:25+00:00"
+          "ts": "2026-10-05T19:09:58+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:34:30+00:00"
+          "ts": "2026-10-05T19:10:03+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:34:38+00:00"
+          "ts": "2026-10-05T19:10:08+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:34:54+00:00"
+          "ts": "2026-10-05T19:10:14+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:34:54+00:00"
+          "ts": "2026-10-05T19:10:19+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:34:59+00:00"
+          "ts": "2026-10-05T19:10:23+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:35:05+00:00"
+          "ts": "2026-10-05T19:10:30+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:35:13+00:00"
+          "ts": "2026-10-05T19:10:33+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:35:20+00:00"
+          "ts": "2026-10-05T19:10:37+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:35:24+00:00"
+          "ts": "2026-10-05T19:10:44+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:35:33+00:00"
+          "ts": "2026-10-05T19:10:53+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:35:36+00:00"
+          "ts": "2026-10-05T19:10:59+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T19:11:05+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:35:46+00:00"
+          "ts": "2026-10-05T19:11:09+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:35:52+00:00"
+          "ts": "2026-10-05T19:11:16+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:35:57+00:00"
+          "ts": "2026-10-05T19:11:24+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:36:00+00:00"
+          "ts": "2026-10-05T19:11:30+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T19:11:44+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:11:44+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:36:05+00:00"
+          "ts": "2026-10-05T19:11:54+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:36:10+00:00"
+          "ts": "2026-10-05T19:11:58+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:36:15+00:00"
+          "ts": "2026-10-05T19:12:07+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:36:22+00:00"
+          "ts": "2026-10-05T19:12:18+00:00"
         },
         {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:12:26+00:00"
+        },
+        {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:36:22+00:00"
+          "ts": "2026-10-05T19:12:31+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:36:25+00:00"
+          "ts": "2026-10-05T19:12:35+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:36:31+00:00"
+          "ts": "2026-10-05T19:12:39+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:36:35+00:00"
+          "ts": "2026-10-05T19:12:44+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:36:40+00:00"
+          "ts": "2026-10-05T19:12:50+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:36:45+00:00"
+          "ts": "2026-10-05T19:12:57+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:36:50+00:00"
+          "ts": "2026-10-05T19:13:00+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:36:55+00:00"
+          "ts": "2026-10-05T19:13:06+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:37:01+00:00"
+          "ts": "2026-10-05T19:13:10+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:37:08+00:00"
+          "ts": "2026-10-05T19:13:15+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:37:14+00:00"
+          "ts": "2026-10-05T19:13:21+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:37:24+00:00"
+          "ts": "2026-10-05T19:13:25+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:37:27+00:00"
+          "ts": "2026-10-05T19:13:30+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:13:35+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:37:32+00:00"
+          "ts": "2026-10-05T19:13:44+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:37:36+00:00"
+          "ts": "2026-10-05T19:13:50+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:37:51+00:00"
+          "ts": "2026-10-05T19:13:55+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:37:56+00:00"
+          "ts": "2026-10-05T19:13:59+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:37:57+00:00"
+          "ts": "2026-10-05T19:14:05+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:38:01+00:00"
+          "ts": "2026-10-05T19:14:10+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:38:06+00:00"
+          "ts": "2026-10-05T19:14:17+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:38:10+00:00"
+          "ts": "2026-10-05T19:14:24+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:38:17+00:00"
+          "ts": "2026-10-05T19:14:29+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:38:25+00:00"
+          "ts": "2026-10-05T19:14:40+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:38:33+00:00"
+          "ts": "2026-10-05T19:14:47+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:38:39+00:00"
+          "ts": "2026-10-05T19:14:55+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:38:47+00:00"
+          "ts": "2026-10-05T19:15:04+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:38:51+00:00"
+          "ts": "2026-10-05T19:15:12+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:38:57+00:00"
+          "ts": "2026-10-05T19:15:16+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:39:02+00:00"
+          "ts": "2026-10-05T19:15:22+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:39:06+00:00"
+          "ts": "2026-10-05T19:15:27+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:39:14+00:00"
+          "ts": "2026-10-05T19:15:32+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:39:19+00:00"
+          "ts": "2026-10-05T19:15:36+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:39:24+00:00"
+          "ts": "2026-10-05T19:15:46+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:39:29+00:00"
+          "ts": "2026-10-05T19:15:52+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:39:35+00:00"
+          "ts": "2026-10-05T19:15:57+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:39:39+00:00"
+          "ts": "2026-10-05T19:16:02+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:39:44+00:00"
+          "ts": "2026-10-05T19:16:08+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:39:49+00:00"
+          "ts": "2026-10-05T19:16:11+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:39:56+00:00"
+          "ts": "2026-10-05T19:16:16+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:40:03+00:00"
+          "ts": "2026-10-05T19:16:22+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:40:08+00:00"
+          "ts": "2026-10-05T19:16:27+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:40:13+00:00"
+          "ts": "2026-10-05T19:16:34+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:40:17+00:00"
+          "ts": "2026-10-05T19:16:38+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:40:22+00:00"
+          "ts": "2026-10-05T19:16:45+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:40:29+00:00"
+          "ts": "2026-10-05T19:16:51+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:40:32+00:00"
+          "ts": "2026-10-05T19:16:56+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:40:37+00:00"
+          "ts": "2026-10-05T19:17:02+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:40:48+00:00"
+          "ts": "2026-10-05T19:17:12+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:40:55+00:00"
+          "ts": "2026-10-05T19:17:21+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:40:59+00:00"
+          "ts": "2026-10-05T19:17:24+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:41:05+00:00"
+          "ts": "2026-10-05T19:17:29+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:41:10+00:00"
+          "ts": "2026-10-05T19:17:33+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:41:13+00:00"
+          "ts": "2026-10-05T19:17:37+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:41:18+00:00"
+          "ts": "2026-10-05T19:17:43+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:41:23+00:00"
+          "ts": "2026-10-05T19:17:47+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:17:52+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:41:38+00:00"
+          "ts": "2026-10-05T19:17:57+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:41:44+00:00"
+          "ts": "2026-10-05T19:18:03+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:41:53+00:00"
+          "ts": "2026-10-05T19:18:06+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:41:59+00:00"
+          "ts": "2026-10-05T19:18:12+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:42:04+00:00"
+          "ts": "2026-10-05T19:18:18+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:18:24+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:42:22+00:00"
+          "ts": "2026-10-05T19:18:26+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:42:22+00:00"
+          "ts": "2026-10-05T19:18:35+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T19:18:39+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:42:29+00:00"
+          "ts": "2026-10-05T19:18:43+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:42:34+00:00"
+          "ts": "2026-10-05T19:18:48+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:42:39+00:00"
+          "ts": "2026-10-05T19:18:55+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:42:43+00:00"
+          "ts": "2026-10-05T19:19:00+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:42:48+00:00"
+          "ts": "2026-10-05T19:19:09+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:42:54+00:00"
+          "ts": "2026-10-05T19:19:14+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:42:58+00:00"
+          "ts": "2026-10-05T19:19:17+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:43:09+00:00"
+          "ts": "2026-10-05T19:19:23+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:43:10+00:00"
+          "ts": "2026-10-05T19:19:28+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:43:14+00:00"
+          "ts": "2026-10-05T19:19:33+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:43:20+00:00"
+          "ts": "2026-10-05T19:19:37+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:43:24+00:00"
+          "ts": "2026-10-05T19:19:44+00:00"
         },
         {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:19:49+00:00"
+        },
+        {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:43:41+00:00"
+          "ts": "2026-10-05T19:19:55+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:43:42+00:00"
+          "ts": "2026-10-05T19:19:59+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T19:20:03+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:43:52+00:00"
+          "ts": "2026-10-05T19:20:09+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:43:55+00:00"
+          "ts": "2026-10-05T19:20:13+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:44:00+00:00"
+          "ts": "2026-10-05T19:20:18+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:44:07+00:00"
+          "ts": "2026-10-05T19:20:24+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:44:12+00:00"
+          "ts": "2026-10-05T19:20:28+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:44:21+00:00"
+          "ts": "2026-10-05T19:20:33+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:44:28+00:00"
+          "ts": "2026-10-05T19:20:38+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:44:32+00:00"
+          "ts": "2026-10-05T19:20:44+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:44:46+00:00"
+          "ts": "2026-10-05T19:20:54+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:44:51+00:00"
+          "ts": "2026-10-05T19:20:59+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:44:57+00:00"
+          "ts": "2026-10-05T19:21:05+00:00"
         },
         {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T19:21:12+00:00"
+        },
+        {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:45:10+00:00"
+          "ts": "2026-10-05T19:21:16+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:45:13+00:00"
+          "ts": "2026-10-05T19:21:21+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:21:23+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:45:21+00:00"
+          "ts": "2026-10-05T19:21:29+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:45:26+00:00"
+          "ts": "2026-10-05T19:21:36+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:45:30+00:00"
+          "ts": "2026-10-05T19:21:44+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:45:35+00:00"
+          "ts": "2026-10-05T19:21:48+00:00"
+        },
+        {
+          "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
+          "ts": "2026-10-05T19:21:54+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:45:42+00:00"
+          "ts": "2026-10-05T19:22:04+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:22:04+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:45:46+00:00"
+          "ts": "2026-10-05T19:22:09+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:45:50+00:00"
+          "ts": "2026-10-05T19:22:14+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:45:56+00:00"
+          "ts": "2026-10-05T19:22:22+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:46:02+00:00"
+          "ts": "2026-10-05T19:22:26+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:46:06+00:00"
+          "ts": "2026-10-05T19:22:33+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:46:13+00:00"
+          "ts": "2026-10-05T19:22:40+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:46:19+00:00"
+          "ts": "2026-10-05T19:22:44+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:46:24+00:00"
+          "ts": "2026-10-05T19:23:04+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:46:28+00:00"
+          "ts": "2026-10-05T19:23:11+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:46:35+00:00"
+          "ts": "2026-10-05T19:23:19+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:46:40+00:00"
+          "ts": "2026-10-05T19:23:28+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:46:43+00:00"
+          "ts": "2026-10-05T19:23:37+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:46:48+00:00"
+          "ts": "2026-10-05T19:23:41+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:46:53+00:00"
+          "ts": "2026-10-05T19:23:47+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:47:00+00:00"
+          "ts": "2026-10-05T19:23:52+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:47:07+00:00"
+          "ts": "2026-10-05T19:24:05+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:47:12+00:00"
+          "ts": "2026-10-05T19:24:10+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:47:17+00:00"
+          "ts": "2026-10-05T19:24:16+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:47:22+00:00"
+          "ts": "2026-10-05T19:24:20+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:47:27+00:00"
+          "ts": "2026-10-05T19:24:25+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:47:44+00:00"
+          "ts": "2026-10-05T19:24:32+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:47:47+00:00"
+          "ts": "2026-10-05T19:24:35+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:47:53+00:00"
+          "ts": "2026-10-05T19:24:41+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:47:57+00:00"
+          "ts": "2026-10-05T19:24:46+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:48:02+00:00"
+          "ts": "2026-10-05T19:24:51+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:48:09+00:00"
+          "ts": "2026-10-05T19:25:07+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:48:12+00:00"
+          "ts": "2026-10-05T19:25:12+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:48:18+00:00"
+          "ts": "2026-10-05T19:25:18+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:48:23+00:00"
+          "ts": "2026-10-05T19:25:31+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:48:29+00:00"
+          "ts": "2026-10-05T19:25:36+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:48:36+00:00"
+          "ts": "2026-10-05T19:25:41+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:48:41+00:00"
+          "ts": "2026-10-05T19:25:47+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:48:50+00:00"
+          "ts": "2026-10-05T19:25:51+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:48:54+00:00"
+          "ts": "2026-10-05T19:25:55+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:26:01+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:49:04+00:00"
+          "ts": "2026-10-05T19:26:09+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:49:08+00:00"
+          "ts": "2026-10-05T19:26:16+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:49:14+00:00"
+          "ts": "2026-10-05T19:26:22+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:49:19+00:00"
+          "ts": "2026-10-05T19:26:26+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:49:24+00:00"
+          "ts": "2026-10-05T19:26:32+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:49:27+00:00"
+          "ts": "2026-10-05T19:26:36+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:49:33+00:00"
+          "ts": "2026-10-05T19:26:43+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:49:45+00:00"
+          "ts": "2026-10-05T19:26:47+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:49:46+00:00"
+          "ts": "2026-10-05T19:26:52+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:49:53+00:00"
+          "ts": "2026-10-05T19:27:11+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:49:59+00:00"
+          "ts": "2026-10-05T19:27:12+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:50:05+00:00"
+          "ts": "2026-10-05T19:27:17+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:50:09+00:00"
+          "ts": "2026-10-05T19:27:30+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:50:14+00:00"
+          "ts": "2026-10-05T19:27:37+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:50:22+00:00"
+          "ts": "2026-10-05T19:27:43+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:50:36+00:00"
+          "ts": "2026-10-05T19:27:47+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:50:37+00:00"
+          "ts": "2026-10-05T19:27:55+00:00"
         },
         {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:28:01+00:00"
+        },
+        {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:50:48+00:00"
+          "ts": "2026-10-05T19:28:08+00:00"
         },
         {
           "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
-          "ts": "2026-10-05T10:50:57+00:00"
+          "ts": "2026-10-05T19:28:12+00:00"
         },
         {
           "key": "list:HQqDZnGeSAYtGg5yZmoj7z1o5VxNkrGBSHgMmKdwGC9e",
-          "ts": "2026-10-05T10:50:57+00:00"
+          "ts": "2026-10-05T19:28:19+00:00"
+        },
+        {
+          "key": "list:E23wProFz6JnqrDHmUuNSFrWWj93aonBvG5hrtS7YnqB",
+          "ts": "2026-10-05T19:28:23+00:00"
         }
       ],
       "history_capped_by_api": true
@@ -71388,24 +71328,30 @@
           "floor_sol": 2.0387,
           "listed": 124,
           "sales_24h": 9
+        },
+        {
+          "ts": "2026-10-05T19:28:33.038682+00:00",
+          "floor_sol": 2.0573,
+          "listed": 125,
+          "sales_24h": 4
         }
       ],
       "last_signal": "WATCH",
       "current": {
-        "floor_sol": 2.0387,
-        "floor_eur": 219.61,
-        "floor_usdc": 246.07,
-        "listed": 124,
-        "avg_price_24h_sol": 1.92185,
-        "sales_24h": 9,
-        "liquidity_ratio_pct": 7.3,
-        "sales_coverage_hours": 2.8,
+        "floor_sol": 2.0573,
+        "floor_eur": 220.34,
+        "floor_usdc": 247.23,
+        "listed": 125,
+        "avg_price_24h_sol": 1.9505,
+        "sales_24h": 4,
+        "liquidity_ratio_pct": 3.2,
+        "sales_coverage_hours": 5.4,
         "holders": null,
         "signal": "WATCH",
-        "signal_reason": "9 sale(s) in 24h",
-        "pct_7d": 24.6,
-        "pct_30d": -2.8,
-        "updated_at": "2026-10-05T10:51:04.775567+00:00"
+        "signal_reason": "4 sale(s) in 24h",
+        "pct_7d": 11.5,
+        "pct_30d": -1.9,
+        "updated_at": "2026-10-05T19:28:33.038682+00:00"
       },
       "ath_sol": 2.205,
       "ath_ts": "2026-09-18T14:21:43+00:00",
@@ -71415,54 +71361,49 @@
       "synced_at": "2026-09-03T15:52:28.625832+00:00",
       "recent_tx": [
         {
+          "type": "poolUpdate",
+          "type_label": "poolUpdate",
+          "price_sol": 1.8545,
+          "ts": "2026-10-05T19:26:22+00:00"
+        },
+        {
+          "type": "poolUpdate",
+          "type_label": "poolUpdate",
+          "price_sol": 1.606205,
+          "ts": "2026-10-05T19:26:14+00:00"
+        },
+        {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 1.600505,
-          "ts": "2026-10-05T10:51:07+00:00"
+          "price_sol": 1.8544,
+          "ts": "2026-10-05T19:26:06+00:00"
         },
         {
           "type": "poolUpdate",
           "type_label": "poolUpdate",
-          "price_sol": 1.600505,
-          "ts": "2026-10-05T10:51:07+00:00"
+          "price_sol": 1.8544,
+          "ts": "2026-10-05T19:26:06+00:00"
         },
         {
           "type": "bid",
           "type_label": "Offer",
-          "price_sol": 1.8697,
-          "ts": "2026-10-05T10:50:48+00:00"
-        },
-        {
-          "type": "poolUpdate",
-          "type_label": "poolUpdate",
-          "price_sol": 1.8697,
-          "ts": "2026-10-05T10:50:48+00:00"
-        },
-        {
-          "type": "poolUpdate",
-          "type_label": "poolUpdate",
-          "price_sol": 1.8687,
-          "ts": "2026-10-05T10:50:47+00:00"
+          "price_sol": 1.606105,
+          "ts": "2026-10-05T19:26:03+00:00"
         }
       ],
       "synced_back_to": null,
       "history_complete": false,
       "sync_offset": 15100,
-      "last_market_alert_ts": "2026-10-05T10:09:49+00:00",
-      "recent_alert_keys": [
-        {
-          "key": "buyNow:8Z36T6brJv5PiMUamTX7mA2ABm9fUjbh686YfWDa3GA7",
-          "ts": "2026-10-05T10:09:49+00:00"
-        }
-      ],
+      "last_market_alert_ts": "2026-10-05T16:03:03+00:00",
+      "recent_alert_keys": [],
       "history_capped_by_api": true
     }
   },
-  "last_update": "2026-10-05T10:51:04.775567+00:00",
-  "sol_eur": 107.72,
-  "sol_usdc": 120.7,
+  "last_update": "2026-10-05T19:28:33.038682+00:00",
+  "sol_eur": 107.1,
+  "sol_usdc": 120.17,
   "total_holders_naive": null,
-  "last_heartbeat_ts": "2026-10-05T10:51:04.775567+00:00",
+  "last_heartbeat_ts": "2026-10-05T19:28:33.038682+00:00",
   "coverage_debug": {
     "tomorrowland_winter": {
       "coverage_hours": 0.98,
